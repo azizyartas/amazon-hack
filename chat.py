@@ -115,21 +115,21 @@ Elindeki agentlar:
 Mevcut depolar: WH001 (İstanbul), WH002 (Ankara), WH003 (İzmir), WH004 (Antalya), WH005 (Bursa), WH006 (Trabzon)
 Mevcut SKU'lar: SKU001 (Elektronik), SKU002 (Gıda), SKU003 (Giyim)
 
-Kullanıcının sorusuna göre hangi agent'ın ne yapması gerektiğini belirle ve sonuçları açıkla.
-Kısa ve öz yanıtlar ver. Verileri tablo formatında göster.
-Kullanıcı "kritik stokları göster" dediğinde SADECE kritik stok listesini göster, transfer önerisi ekleme. Transfer önerisi ancak kullanıcı açıkça istediğinde yapılmalı.
+ÖNCELİKLİ KURAL - MUTLAKA UYULMALI:
+- Kullanıcı selamlama yapıyorsa (merhaba, selam, hey, nasılsın vb.) SADECE kısa bir selamlama yap. Stok raporu, transfer önerisi, uyarı veya herhangi bir analiz YAPMA. Örnek yanıt: "Merhaba! Size nasıl yardımcı olabilirim?"
+- Kullanıcı ne istediğini açıkça belirtmedikçe HİÇBİR rapor, analiz veya transfer önerisi YAPMA.
+- SADECE kullanıcının sorduğu soruya cevap ver. Fazlasını YAPMA.
 
-ÖNEMLİ KURALLAR:
-1. Kullanıcı sadece "öner", "ne önerirsin", "önerebileceğin transferler" gibi sorular sorduğunda SADECE öneri yap, [EXECUTE_TRANSFER] komutu EKLEME.
-2. Kullanıcı açıkça "transfer et", "uygula", "yap", "gerçekleştir", "onayla" gibi eylem kelimeleri kullandığında [EXECUTE_TRANSFER] komutlarını ekle.
-3. Transfer önerirken kaynak depodaki stok miktarını MUTLAKA kontrol et. Kaynak depo transfer sonrası 40 birimin altına düşmemeli. Güvenli fazlalık = mevcut stok - 40. Sadece güvenli fazlalık kadar transfer öner.
-4. Eğer hiçbir depodan tam miktar karşılanamıyorsa, mümkün olan max miktarı öner ve eksik kalan için "Dış tedarik gerekli: X adet" notu ekle.
-5. Onay bekleyen transferleri onaylamak için [EXECUTE_TRANSFER] KULLANMA. Kullanıcıya "onayla <id>" komutunu kullanmasını söyle.
-6. SADECE kritik stok uyarısı olan depo/SKU çiftleri için transfer öner. Stok seviyesi eşiğin üstünde olan depolara transfer önerme.
-7. Kaynak depo seçerken satış potansiyelini dikkate al. Aynı SKU için birden fazla kaynak aday varsa, ürünün AZ satıldığı depodan transfer öncelikli olmalı. Örneğin İstanbul'da çok satılan bir ürün Bursa'da az satılıyorsa, Bursa'dan İstanbul'a transfer öncelikli.
-
-Transfer komutu formatı (SADECE kullanıcı açıkça istediğinde):
-[EXECUTE_TRANSFER: kaynak_depo hedef_depo sku miktar]"""
+TRANSFER KURALLARI:
+1. [EXECUTE_TRANSFER] komutu SADECE kullanıcı açıkça "transfer et", "uygula", "yap", "gerçekleştir" gibi eylem kelimeleri kullandığında eklenebilir.
+2. "Öner", "ne önerirsin" gibi sorularda SADECE öneri yap, [EXECUTE_TRANSFER] komutu EKLEME.
+3. Kaynak depo transfer sonrası 40 birimin altına düşmemeli. Güvenli fazlalık = mevcut stok - 40.
+4. Hiçbir depodan tam miktar karşılanamıyorsa, max miktarı öner ve eksik kalan için "Dış tedarik gerekli: X adet" notu ekle.
+5. Onay bekleyen transferler için [EXECUTE_TRANSFER] KULLANMA. Kullanıcıya "onayla <id>" komutunu söyle.
+6. SADECE kritik stok uyarısı olan depo/SKU çiftleri için transfer öner.
+7. Kaynak depo seçerken satış potansiyelini dikkate al. Az satan depodan çok satan depoya transfer öncelikli.
+8. Transfer komutu formatı: [EXECUTE_TRANSFER: kaynak_depo hedef_depo sku miktar] - Örnek: [EXECUTE_TRANSFER: WH002 WH001 SKU001 35]
+9. Kritik stokları göster dendiğinde SADECE kritik stok listesini göster, transfer önerisi ekleme."""
 
 
 def build_context(agents: dict) -> str:
@@ -178,6 +178,12 @@ def build_context(agents: dict) -> str:
 def chat_with_orchestrator(user_message: str, agents: dict, history: list) -> str:
     """Kullanıcı mesajını orchestrator agent'a gönderir."""
     bedrock = agents["bedrock"]
+
+    # Selamlama kontrolü - AI'a sistem durumu gönderme
+    greetings = ["merhaba", "selam", "hey", "hello", "hi", "günaydın", "iyi günler", "iyi akşamlar", "nasılsın", "naber"]
+    if user_message.strip().lower() in greetings:
+        return "Merhaba! Ben Depo Stok Yönetim Sistemi asistanıyım. Size nasıl yardımcı olabilirim?\n\nÖrnek komutlar: kritik stokları göster, transfer öner, satış potansiyeli analizi yap"
+
     context = build_context(agents)
 
     # Önceki konuşma geçmişini ekle
@@ -198,14 +204,28 @@ def chat_with_orchestrator(user_message: str, agents: dict, history: list) -> st
             body=json.dumps({
                 "system": [{"text": SYSTEM_PROMPT}],
                 "messages": messages,
-                "inferenceConfig": {"max_new_tokens": 1500, "temperature": 0.7},
+                "inferenceConfig": {"max_new_tokens": 1500, "temperature": 0.4},
             }),
         )
         result = json.loads(response["body"].read())
         reply = result.get("output", {}).get("message", {}).get("content", [{}])[0].get("text", "")
 
-        # AI yanıtından transfer komutlarını çıkar ve çalıştır
-        reply, executed = execute_transfers_from_reply(reply, agents)
+        # Kullanıcı sadece öneri istiyorsa, AI yanlışlıkla EXECUTE_TRANSFER eklemiş olabilir - sil
+        import re
+        suggest_keywords = ["öner", "tavsiye", "ne dersin", "ne önerirsin", "öneri"]
+        execute_keywords = ["uygula", "transfer et", "yap", "gerçekleştir", "çalıştır", "execute"]
+        msg_lower = user_message.strip().lower()
+        is_suggestion = any(k in msg_lower for k in suggest_keywords)
+        is_execution = any(k in msg_lower for k in execute_keywords)
+
+        if is_suggestion and not is_execution:
+            # Öneri modunda - EXECUTE_TRANSFER komutlarını sil, çalıştırma
+            reply = re.sub(r'\[EXECUTE_TRANSFER:[^\]]*\]', '', reply, flags=re.IGNORECASE).strip()
+            reply = re.sub(r'\n{3,}', '\n\n', reply)
+        else:
+            # AI yanıtından transfer komutlarını çıkar ve çalıştır
+            reply, executed = execute_transfers_from_reply(reply, agents)
+
         return reply
     except Exception as e:
         return f"Hata: {e}"
@@ -214,15 +234,37 @@ def chat_with_orchestrator(user_message: str, agents: dict, history: list) -> st
 def execute_transfers_from_reply(reply: str, agents: dict) -> tuple[str, list]:
     """AI yanıtındaki [EXECUTE_TRANSFER: ...] komutlarını parse edip gerçekten çalıştırır."""
     import re
-    pattern = r'\[EXECUTE_TRANSFER:\s*(WH\d+)\s+(WH\d+)\s+(SKU\d+)\s+(\d+)\]'
-    matches = re.findall(pattern, reply)
 
-    if not matches:
+    # Tüm EXECUTE_TRANSFER komutlarını bul (esnek regex - boşluk, satır sonu vb. tolere eder)
+    generic_pattern = r'\[EXECUTE_TRANSFER:\s*([^\]]+)\]'
+    raw_matches = re.findall(generic_pattern, reply, re.IGNORECASE)
+
+    if not raw_matches:
+        return reply, []
+
+    parsed = []
+    for raw in raw_matches:
+        tokens = raw.strip().split()
+        if len(tokens) < 4:
+            continue
+        # Token'ları WH ve SKU olarak ayır
+        wh_tokens = [t for t in tokens if t.upper().startswith("WH")]
+        sku_tokens = [t for t in tokens if t.upper().startswith("SKU")]
+        qty_tokens = [t for t in tokens if t.isdigit()]
+
+        if len(wh_tokens) >= 2 and len(sku_tokens) >= 1 and len(qty_tokens) >= 1:
+            # İlk WH = kaynak, ikinci WH = hedef (AI formatından bağımsız)
+            src = wh_tokens[0]
+            tgt = wh_tokens[1]
+            sku = sku_tokens[0]
+            qty = qty_tokens[0]
+            parsed.append((src, tgt, sku, qty))
+
+    if not parsed:
         return reply, []
 
     # Komut satırlarını yanıttan temizle
-    clean_reply = re.sub(r'\[EXECUTE_TRANSFER:.*?\]', '', reply).strip()
-    # Boş satırları temizle
+    clean_reply = re.sub(r'\[EXECUTE_TRANSFER:[^\]]*\]', '', reply, flags=re.IGNORECASE).strip()
     clean_reply = re.sub(r'\n{3,}', '\n\n', clean_reply)
 
     SAFETY_THRESHOLD = 40  # Kaynak depo bu seviyenin altına düşmemeli
@@ -236,7 +278,7 @@ def execute_transfers_from_reply(reply: str, agents: dict) -> tuple[str, list]:
     all_warehouses = list(agents["warehouses"].keys())
     sales_scores_cache: dict[str, dict[str, float]] = {}
 
-    for src, tgt, sku, qty_str in matches:
+    for src, tgt, sku, qty_str in parsed:
         if sku not in sales_scores_cache:
             scores = {}
             for wh_id in all_warehouses:
@@ -244,7 +286,7 @@ def execute_transfers_from_reply(reply: str, agents: dict) -> tuple[str, list]:
                 scores[wh_id] = prediction.sales_potential_score
             sales_scores_cache[sku] = scores
 
-    for src, tgt, sku, qty_str in matches:
+    for src, tgt, sku, qty_str in parsed:
         qty = int(qty_str)
         sales_scores = sales_scores_cache.get(sku, {})
 
