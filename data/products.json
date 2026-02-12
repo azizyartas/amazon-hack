@@ -1,0 +1,802 @@
+[
+  {
+    "sku": "SKU001",
+    "name": "Laptop 15.6 inch",
+    "category": "Elektronik",
+    "price": 16165.96,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU002",
+    "name": "Kablosuz Kulaklık",
+    "category": "Elektronik",
+    "price": 1112.76,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU003",
+    "name": "Akıllı Saat",
+    "category": "Elektronik",
+    "price": 7238.22,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU004",
+    "name": "Tablet 10 inch",
+    "category": "Elektronik",
+    "price": 5968.66,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU005",
+    "name": "Bluetooth Hoparlör",
+    "category": "Elektronik",
+    "price": 18543.54,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU006",
+    "name": "USB-C Hub",
+    "category": "Elektronik",
+    "price": 17079.14,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU007",
+    "name": "Webcam HD",
+    "category": "Elektronik",
+    "price": 22358.4,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU008",
+    "name": "Mekanik Klavye",
+    "category": "Elektronik",
+    "price": 2630.0,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU009",
+    "name": "Gaming Mouse",
+    "category": "Elektronik",
+    "price": 10837.08,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU010",
+    "name": "Taşınabilir SSD 1TB",
+    "category": "Elektronik",
+    "price": 1230.03,
+    "aging_threshold_days": 90,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU011",
+    "name": "Erkek Kışlık Mont",
+    "category": "Giyim",
+    "price": 734.05,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU012",
+    "name": "Kadın Trençkot",
+    "category": "Giyim",
+    "price": 1565.53,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU013",
+    "name": "Kot Pantolon Slim",
+    "category": "Giyim",
+    "price": 176.95,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU014",
+    "name": "Pamuklu T-Shirt",
+    "category": "Giyim",
+    "price": 676.63,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU015",
+    "name": "Spor Ayakkabı",
+    "category": "Giyim",
+    "price": 1984.66,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU016",
+    "name": "Deri Cüzdan",
+    "category": "Giyim",
+    "price": 1680.33,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU017",
+    "name": "Yün Kazak",
+    "category": "Giyim",
+    "price": 739.28,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU018",
+    "name": "Keten Gömlek",
+    "category": "Giyim",
+    "price": 1808.87,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU019",
+    "name": "Şapka Beyzbol",
+    "category": "Giyim",
+    "price": 2447.35,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU020",
+    "name": "Çorap Seti 6lı",
+    "category": "Giyim",
+    "price": 118.85,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU021",
+    "name": "Zeytinyağı 1L",
+    "category": "Gıda",
+    "price": 408.74,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU022",
+    "name": "Bal Kavanoz 500g",
+    "category": "Gıda",
+    "price": 358.13,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU023",
+    "name": "Kuru Kayısı 1kg",
+    "category": "Gıda",
+    "price": 189.92,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU024",
+    "name": "Fındık İç 500g",
+    "category": "Gıda",
+    "price": 103.08,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU025",
+    "name": "Çay 1kg Rize",
+    "category": "Gıda",
+    "price": 479.89,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU026",
+    "name": "Türk Kahvesi 250g",
+    "category": "Gıda",
+    "price": 188.2,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU027",
+    "name": "Pekmez 800g",
+    "category": "Gıda",
+    "price": 73.59,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU028",
+    "name": "Tahin 300g",
+    "category": "Gıda",
+    "price": 75.46,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU029",
+    "name": "Pestil Paketi",
+    "category": "Gıda",
+    "price": 428.32,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU030",
+    "name": "Lokum Kutusu 500g",
+    "category": "Gıda",
+    "price": 313.75,
+    "aging_threshold_days": 30,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU031",
+    "name": "Ofis Sandalyesi",
+    "category": "Mobilya",
+    "price": 24406.72,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU032",
+    "name": "Çalışma Masası 120cm",
+    "category": "Mobilya",
+    "price": 22162.22,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU033",
+    "name": "Kitaplık 5 Raflı",
+    "category": "Mobilya",
+    "price": 16550.61,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU034",
+    "name": "TV Ünitesi",
+    "category": "Mobilya",
+    "price": 29220.36,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU035",
+    "name": "Yemek Masası 6 Kişilik",
+    "category": "Mobilya",
+    "price": 11977.5,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU036",
+    "name": "Koltuk Takımı 3+1",
+    "category": "Mobilya",
+    "price": 17009.18,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU037",
+    "name": "Gardırop 3 Kapılı",
+    "category": "Mobilya",
+    "price": 25052.74,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU038",
+    "name": "Sehpa Set",
+    "category": "Mobilya",
+    "price": 18937.07,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU039",
+    "name": "Yatak Başlığı",
+    "category": "Mobilya",
+    "price": 25989.5,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU040",
+    "name": "Ayakkabılık",
+    "category": "Mobilya",
+    "price": 17743.21,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU041",
+    "name": "Roman Bestseller",
+    "category": "Kitap",
+    "price": 220.23,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU042",
+    "name": "Yazılım Geliştirme Kitabı",
+    "category": "Kitap",
+    "price": 42.37,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU043",
+    "name": "Tarih Ansiklopedisi",
+    "category": "Kitap",
+    "price": 91.53,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU044",
+    "name": "Çocuk Hikaye Seti",
+    "category": "Kitap",
+    "price": 108.13,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU045",
+    "name": "Felsefe Klasikleri",
+    "category": "Kitap",
+    "price": 51.54,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU046",
+    "name": "Bilim Kurgu Serisi",
+    "category": "Kitap",
+    "price": 92.85,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU047",
+    "name": "Yemek Tarifleri",
+    "category": "Kitap",
+    "price": 57.27,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU048",
+    "name": "Seyahat Rehberi",
+    "category": "Kitap",
+    "price": 105.05,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU049",
+    "name": "Kişisel Gelişim",
+    "category": "Kitap",
+    "price": 201.63,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU050",
+    "name": "Şiir Antolojisi",
+    "category": "Kitap",
+    "price": 128.5,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU051",
+    "name": "Lego Set 500 Parça",
+    "category": "Oyuncak",
+    "price": 771.85,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU052",
+    "name": "Puzzle 1000 Parça",
+    "category": "Oyuncak",
+    "price": 458.54,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU053",
+    "name": "Peluş Ayı 40cm",
+    "category": "Oyuncak",
+    "price": 570.61,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU054",
+    "name": "Uzaktan Kumandalı Araba",
+    "category": "Oyuncak",
+    "price": 1876.48,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU055",
+    "name": "Bebek Seti",
+    "category": "Oyuncak",
+    "price": 1313.67,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU056",
+    "name": "Masa Oyunu Strateji",
+    "category": "Oyuncak",
+    "price": 1237.81,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU057",
+    "name": "Slime Kit",
+    "category": "Oyuncak",
+    "price": 383.72,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU058",
+    "name": "Nerf Tabanca",
+    "category": "Oyuncak",
+    "price": 1471.8,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU059",
+    "name": "Drone Mini",
+    "category": "Oyuncak",
+    "price": 368.63,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU060",
+    "name": "Kaykay Çocuk",
+    "category": "Oyuncak",
+    "price": 789.94,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU061",
+    "name": "Yoga Matı",
+    "category": "Spor Malzemeleri",
+    "price": 14843.9,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU062",
+    "name": "Dambıl Seti 20kg",
+    "category": "Spor Malzemeleri",
+    "price": 9636.0,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU063",
+    "name": "Koşu Bandı",
+    "category": "Spor Malzemeleri",
+    "price": 8398.55,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU064",
+    "name": "Pilates Topu",
+    "category": "Spor Malzemeleri",
+    "price": 10300.75,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU065",
+    "name": "Direnç Bandı Seti",
+    "category": "Spor Malzemeleri",
+    "price": 12658.49,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU066",
+    "name": "Atlama İpi",
+    "category": "Spor Malzemeleri",
+    "price": 11662.4,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU067",
+    "name": "Bisiklet Kaskı",
+    "category": "Spor Malzemeleri",
+    "price": 3512.82,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU068",
+    "name": "Tenis Raketi",
+    "category": "Spor Malzemeleri",
+    "price": 578.29,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU069",
+    "name": "Futbol Topu",
+    "category": "Spor Malzemeleri",
+    "price": 4800.25,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU070",
+    "name": "Yüzme Gözlüğü",
+    "category": "Spor Malzemeleri",
+    "price": 4089.34,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU071",
+    "name": "Robot Süpürge",
+    "category": "Ev Aletleri",
+    "price": 2346.53,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU072",
+    "name": "Kahve Makinesi",
+    "category": "Ev Aletleri",
+    "price": 9446.22,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU073",
+    "name": "Tost Makinesi",
+    "category": "Ev Aletleri",
+    "price": 8800.77,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU074",
+    "name": "Blender Set",
+    "category": "Ev Aletleri",
+    "price": 3352.38,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU075",
+    "name": "Ütü Buharlı",
+    "category": "Ev Aletleri",
+    "price": 6657.76,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU076",
+    "name": "Elektrikli Süpürge",
+    "category": "Ev Aletleri",
+    "price": 4137.63,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU077",
+    "name": "Mikrodalga Fırın",
+    "category": "Ev Aletleri",
+    "price": 9171.11,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU078",
+    "name": "Ekmek Yapma Makinesi",
+    "category": "Ev Aletleri",
+    "price": 4750.86,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU079",
+    "name": "Su Isıtıcı",
+    "category": "Ev Aletleri",
+    "price": 2869.34,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU080",
+    "name": "Saç Kurutma Makinesi",
+    "category": "Ev Aletleri",
+    "price": 2692.29,
+    "aging_threshold_days": 180,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU081",
+    "name": "Yüz Kremi 50ml",
+    "category": "Kozmetik",
+    "price": 1144.67,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU082",
+    "name": "Şampuan 500ml",
+    "category": "Kozmetik",
+    "price": 562.35,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU083",
+    "name": "Parfüm 100ml",
+    "category": "Kozmetik",
+    "price": 1189.94,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU084",
+    "name": "Güneş Kremi SPF50",
+    "category": "Kozmetik",
+    "price": 1800.75,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU085",
+    "name": "Dudak Bakım Seti",
+    "category": "Kozmetik",
+    "price": 828.83,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU086",
+    "name": "Makyaj Paleti",
+    "category": "Kozmetik",
+    "price": 477.68,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU087",
+    "name": "Saç Bakım Yağı",
+    "category": "Kozmetik",
+    "price": 1995.2,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU088",
+    "name": "El Kremi Set",
+    "category": "Kozmetik",
+    "price": 1043.58,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU089",
+    "name": "Duş Jeli 400ml",
+    "category": "Kozmetik",
+    "price": 227.27,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU090",
+    "name": "Deodorant Roll-on",
+    "category": "Kozmetik",
+    "price": 141.88,
+    "aging_threshold_days": 365,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU091",
+    "name": "Motor Yağı 4L",
+    "category": "Otomotiv",
+    "price": 637.28,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU092",
+    "name": "Akü 72Ah",
+    "category": "Otomotiv",
+    "price": 3174.49,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU093",
+    "name": "Lastik 205/55R16",
+    "category": "Otomotiv",
+    "price": 3981.19,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU094",
+    "name": "Silecek Seti",
+    "category": "Otomotiv",
+    "price": 2168.58,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU095",
+    "name": "Araç Parfümü",
+    "category": "Otomotiv",
+    "price": 411.29,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU096",
+    "name": "Torpido Düzenleyici",
+    "category": "Otomotiv",
+    "price": 1969.93,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU097",
+    "name": "Araç Şarj Cihazı",
+    "category": "Otomotiv",
+    "price": 4980.99,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU098",
+    "name": "Oto Yıkama Seti",
+    "category": "Otomotiv",
+    "price": 2692.66,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU099",
+    "name": "Far Ampulü LED",
+    "category": "Otomotiv",
+    "price": 4858.28,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "sku": "SKU100",
+    "name": "Direksiyon Kılıfı",
+    "category": "Otomotiv",
+    "price": 4317.82,
+    "aging_threshold_days": 730,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+]

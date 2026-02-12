@@ -1,0 +1,263 @@
+[
+  {
+    "scenario_id": "PROB001",
+    "type": "stockout_risk",
+    "severity": "critical",
+    "description": "Ankara deposunda Elektronik kategorisi kritik stok seviyesinde",
+    "affected_warehouse": "WH002",
+    "affected_skus": [
+      "SKU001",
+      "SKU002",
+      "SKU003",
+      "SKU004",
+      "SKU005"
+    ],
+    "current_stock_range": "0-5 adet",
+    "expected_action": "İstanbul veya Samsun'dan acil transfer",
+    "deadline_hours": 24
+  },
+  {
+    "scenario_id": "PROB002",
+    "type": "stockout_risk",
+    "severity": "critical",
+    "description": "Antalya deposunda Elektronik ürünleri tükenmiş, turizm sezonu yaklaşıyor",
+    "affected_warehouse": "WH004",
+    "affected_skus": [
+      "SKU001",
+      "SKU003",
+      "SKU005",
+      "SKU007",
+      "SKU009"
+    ],
+    "current_stock_range": "0-3 adet",
+    "expected_action": "Yüksek satış potansiyeli olan depoya acil transfer",
+    "deadline_hours": 12
+  },
+  {
+    "scenario_id": "PROB003",
+    "type": "stockout_risk",
+    "severity": "high",
+    "description": "Bursa deposunda Gıda ürünleri kritik seviyede",
+    "affected_warehouse": "WH005",
+    "affected_skus": [
+      "SKU021",
+      "SKU023",
+      "SKU025",
+      "SKU027"
+    ],
+    "current_stock_range": "1-5 adet",
+    "expected_action": "Samsun veya İstanbul'dan gıda transferi",
+    "deadline_hours": 48
+  },
+  {
+    "scenario_id": "PROB004",
+    "type": "aging_stock",
+    "severity": "high",
+    "description": "İzmir deposunda Gıda ürünleri son kullanma tarihine yaklaşıyor",
+    "affected_warehouse": "WH003",
+    "affected_skus": [
+      "SKU021",
+      "SKU022",
+      "SKU023",
+      "SKU024",
+      "SKU025"
+    ],
+    "aging_days_over_threshold": "30-60 gün",
+    "expected_action": "Satış potansiyeli yüksek depoya acil transfer veya indirimli satış",
+    "deadline_hours": 72
+  },
+  {
+    "scenario_id": "PROB005",
+    "type": "aging_stock",
+    "severity": "medium",
+    "description": "Bursa deposunda Elektronik ürünler yaşlanıyor (yeni model çıkacak)",
+    "affected_warehouse": "WH005",
+    "affected_skus": [
+      "SKU001",
+      "SKU004",
+      "SKU008"
+    ],
+    "aging_days_over_threshold": "15-45 gün",
+    "expected_action": "İstanbul'a transfer (yüksek satış potansiyeli)",
+    "deadline_hours": 168
+  },
+  {
+    "scenario_id": "PROB006",
+    "type": "imbalanced_stock",
+    "severity": "medium",
+    "description": "İzmir ve Antalya'da aşırı stok birikimi, diğer depolar düşük",
+    "overstock_warehouses": [
+      "WH003",
+      "WH004"
+    ],
+    "understock_warehouses": [
+      "WH002",
+      "WH005"
+    ],
+    "affected_categories": [
+      "Mobilya",
+      "Spor Malzemeleri"
+    ],
+    "expected_action": "Stok dengeleme transferleri planla",
+    "deadline_hours": 336
+  },
+  {
+    "scenario_id": "PROB007",
+    "type": "demand_spike",
+    "severity": "high",
+    "description": "Sosyal medyada viral olan Oyuncak ürünü, talep 12x arttı",
+    "affected_skus": [
+      "SKU041",
+      "SKU042",
+      "SKU043"
+    ],
+    "spike_multiplier": 12,
+    "affected_warehouses": "all",
+    "expected_action": "Tüm depolara acil stok dağıtımı, üretici siparişi",
+    "deadline_hours": 48
+  },
+  {
+    "scenario_id": "PROB008",
+    "type": "demand_spike",
+    "severity": "high",
+    "description": "Black Friday kampanyası - Elektronik talebinde 8x artış bekleniyor",
+    "affected_skus": [
+      "SKU001",
+      "SKU002",
+      "SKU003",
+      "SKU004",
+      "SKU005",
+      "SKU006",
+      "SKU007",
+      "SKU008",
+      "SKU009",
+      "SKU010"
+    ],
+    "spike_multiplier": 8,
+    "affected_warehouses": "all",
+    "expected_action": "Ticaret merkezlerinden (İstanbul, Samsun) dağıtım planla",
+    "deadline_hours": 72
+  },
+  {
+    "scenario_id": "PROB009",
+    "type": "supply_disruption",
+    "severity": "critical",
+    "description": "Antalya deposuna 2 hafta boyunca Elektronik tedarik yapılamadı",
+    "affected_warehouse": "WH004",
+    "disruption_days": 14,
+    "affected_skus": [
+      "SKU001",
+      "SKU002",
+      "SKU003",
+      "SKU004",
+      "SKU005",
+      "SKU006",
+      "SKU007",
+      "SKU008",
+      "SKU009",
+      "SKU010"
+    ],
+    "expected_action": "Diğer depolardan acil transfer, müşteri bilgilendirme",
+    "deadline_hours": 24
+  },
+  {
+    "scenario_id": "PROB010",
+    "type": "supply_disruption",
+    "severity": "medium",
+    "description": "Ankara deposuna Gıda tedarikinde 1 haftalık gecikme",
+    "affected_warehouse": "WH002",
+    "disruption_days": 7,
+    "affected_skus": [
+      "SKU021",
+      "SKU022",
+      "SKU023",
+      "SKU024",
+      "SKU025",
+      "SKU026",
+      "SKU027",
+      "SKU028",
+      "SKU029",
+      "SKU030"
+    ],
+    "expected_action": "Samsun'dan gıda transferi planla",
+    "deadline_hours": 48
+  },
+  {
+    "scenario_id": "PROB011",
+    "type": "failed_transfer",
+    "severity": "high",
+    "description": "İstanbul→Ankara transferi yarıda kaldı, stok havada",
+    "transfer_details": {
+      "source": "WH001",
+      "target": "WH002",
+      "sku": "SKU015",
+      "quantity": 50,
+      "status": "in_transit_stuck"
+    },
+    "expected_action": "Transfer durumunu çöz, stok tutarlılığını sağla",
+    "deadline_hours": 6
+  },
+  {
+    "scenario_id": "PROB012",
+    "type": "failed_transfer",
+    "severity": "medium",
+    "description": "Yanlış depoya gönderilmiş ürünler (İzmir yerine Antalya'ya)",
+    "transfer_details": {
+      "intended_target": "WH003",
+      "actual_target": "WH004",
+      "sku": "SKU035",
+      "quantity": 30,
+      "status": "misrouted"
+    },
+    "expected_action": "Düzeltme transferi planla veya Antalya'da tut (satış potansiyeli analizi)",
+    "deadline_hours": 72
+  },
+  {
+    "scenario_id": "PROB013",
+    "type": "capacity_overflow",
+    "severity": "medium",
+    "description": "İzmir deposu kapasite sınırına yaklaşıyor (%95 dolu)",
+    "affected_warehouse": "WH003",
+    "current_utilization": 0.95,
+    "expected_action": "Düşük satış potansiyelli ürünleri diğer depolara aktar",
+    "deadline_hours": 168
+  },
+  {
+    "scenario_id": "PROB014",
+    "type": "high_value_transfer",
+    "severity": "medium",
+    "description": "500.000 TL üzeri Elektronik transferi - insan onayı gerekli",
+    "transfer_details": {
+      "source": "WH001",
+      "target": "WH006",
+      "skus": [
+        "SKU001",
+        "SKU003",
+        "SKU004"
+      ],
+      "total_value": 750000,
+      "requires_approval": true
+    },
+    "expected_action": "İnsan onayı talep et, onay beklerken alternatif planla",
+    "deadline_hours": 48
+  },
+  {
+    "scenario_id": "PROB015",
+    "type": "seasonal_transition",
+    "severity": "low",
+    "description": "Yaz→Kış geçişi: Giyim stokları yeniden dengelenmeli",
+    "affected_categories": [
+      "Giyim"
+    ],
+    "summer_overstock_warehouses": [
+      "WH004"
+    ],
+    "winter_demand_warehouses": [
+      "WH001",
+      "WH002",
+      "WH006"
+    ],
+    "expected_action": "Mevsimsel stok transferi planla",
+    "deadline_hours": 336
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Elektronik",
+    "aging_threshold_days": 90,
+    "min_stock_multiplier": 1.5
+  },
+  {
+    "name": "Giyim",
+    "aging_threshold_days": 180,
+    "min_stock_multiplier": 2.0
+  },
+  {
+    "name": "Gıda",
+    "aging_threshold_days": 30,
+    "min_stock_multiplier": 3.0
+  },
+  {
+    "name": "Mobilya",
+    "aging_threshold_days": 365,
+    "min_stock_multiplier": 1.0
+  },
+  {
+    "name": "Kitap",
+    "aging_threshold_days": 730,
+    "min_stock_multiplier": 1.2
+  },
+  {
+    "name": "Oyuncak",
+    "aging_threshold_days": 180,
+    "min_stock_multiplier": 2.5
+  },
+  {
+    "name": "Spor Malzemeleri",
+    "aging_threshold_days": 365,
+    "min_stock_multiplier": 1.5
+  },
+  {
+    "name": "Ev Aletleri",
+    "aging_threshold_days": 180,
+    "min_stock_multiplier": 1.3
+  },
+  {
+    "name": "Kozmetik",
+    "aging_threshold_days": 365,
+    "min_stock_multiplier": 2.0
+  },
+  {
+    "name": "Otomotiv",
+    "aging_threshold_days": 730,
+    "min_stock_multiplier": 1.0
+  }
+]

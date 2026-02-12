@@ -1,0 +1,5402 @@
+[
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU001",
+    "quantity": 353,
+    "min_threshold": 132,
+    "max_threshold": 706,
+    "received_date": "2025-11-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU002",
+    "quantity": 48,
+    "min_threshold": 18,
+    "max_threshold": 96,
+    "received_date": "2025-04-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU003",
+    "quantity": 312,
+    "min_threshold": 117,
+    "max_threshold": 624,
+    "received_date": "2025-06-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU004",
+    "quantity": 62,
+    "min_threshold": 23,
+    "max_threshold": 124,
+    "received_date": "2025-12-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU005",
+    "quantity": 344,
+    "min_threshold": 129,
+    "max_threshold": 688,
+    "received_date": "2025-09-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU006",
+    "quantity": 243,
+    "min_threshold": 91,
+    "max_threshold": 486,
+    "received_date": "2026-01-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU007",
+    "quantity": 244,
+    "min_threshold": 91,
+    "max_threshold": 488,
+    "received_date": "2025-04-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU008",
+    "quantity": 112,
+    "min_threshold": 42,
+    "max_threshold": 224,
+    "received_date": "2025-12-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU009",
+    "quantity": 444,
+    "min_threshold": 166,
+    "max_threshold": 888,
+    "received_date": "2026-01-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU010",
+    "quantity": 150,
+    "min_threshold": 56,
+    "max_threshold": 300,
+    "received_date": "2025-12-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU011",
+    "quantity": 436,
+    "min_threshold": 218,
+    "max_threshold": 872,
+    "received_date": "2025-05-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU012",
+    "quantity": 182,
+    "min_threshold": 91,
+    "max_threshold": 364,
+    "received_date": "2025-09-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU013",
+    "quantity": 480,
+    "min_threshold": 240,
+    "max_threshold": 960,
+    "received_date": "2025-04-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU014",
+    "quantity": 393,
+    "min_threshold": 196,
+    "max_threshold": 786,
+    "received_date": "2025-10-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU015",
+    "quantity": 211,
+    "min_threshold": 105,
+    "max_threshold": 422,
+    "received_date": "2025-09-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU016",
+    "quantity": 374,
+    "min_threshold": 187,
+    "max_threshold": 748,
+    "received_date": "2025-03-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU017",
+    "quantity": 353,
+    "min_threshold": 176,
+    "max_threshold": 706,
+    "received_date": "2025-07-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU018",
+    "quantity": 470,
+    "min_threshold": 235,
+    "max_threshold": 940,
+    "received_date": "2025-06-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU019",
+    "quantity": 145,
+    "min_threshold": 72,
+    "max_threshold": 290,
+    "received_date": "2025-10-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU020",
+    "quantity": 232,
+    "min_threshold": 116,
+    "max_threshold": 464,
+    "received_date": "2026-01-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU021",
+    "quantity": 324,
+    "min_threshold": 243,
+    "max_threshold": 972,
+    "received_date": "2026-02-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU022",
+    "quantity": 235,
+    "min_threshold": 176,
+    "max_threshold": 704,
+    "received_date": "2025-04-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU023",
+    "quantity": 227,
+    "min_threshold": 170,
+    "max_threshold": 680,
+    "received_date": "2026-02-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU024",
+    "quantity": 105,
+    "min_threshold": 78,
+    "max_threshold": 312,
+    "received_date": "2025-02-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU025",
+    "quantity": 96,
+    "min_threshold": 72,
+    "max_threshold": 288,
+    "received_date": "2025-10-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU026",
+    "quantity": 102,
+    "min_threshold": 76,
+    "max_threshold": 304,
+    "received_date": "2026-01-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU027",
+    "quantity": 318,
+    "min_threshold": 238,
+    "max_threshold": 952,
+    "received_date": "2026-01-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU028",
+    "quantity": 468,
+    "min_threshold": 351,
+    "max_threshold": 1404,
+    "received_date": "2025-10-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU029",
+    "quantity": 275,
+    "min_threshold": 206,
+    "max_threshold": 824,
+    "received_date": "2025-03-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU030",
+    "quantity": 444,
+    "min_threshold": 333,
+    "max_threshold": 1332,
+    "received_date": "2025-10-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU031",
+    "quantity": 155,
+    "min_threshold": 38,
+    "max_threshold": 310,
+    "received_date": "2025-04-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU032",
+    "quantity": 435,
+    "min_threshold": 108,
+    "max_threshold": 870,
+    "received_date": "2025-10-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU033",
+    "quantity": 435,
+    "min_threshold": 108,
+    "max_threshold": 870,
+    "received_date": "2025-07-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU034",
+    "quantity": 203,
+    "min_threshold": 50,
+    "max_threshold": 406,
+    "received_date": "2025-12-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU035",
+    "quantity": 126,
+    "min_threshold": 31,
+    "max_threshold": 252,
+    "received_date": "2025-03-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU036",
+    "quantity": 400,
+    "min_threshold": 100,
+    "max_threshold": 800,
+    "received_date": "2025-08-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU037",
+    "quantity": 393,
+    "min_threshold": 98,
+    "max_threshold": 786,
+    "received_date": "2025-07-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU038",
+    "quantity": 430,
+    "min_threshold": 107,
+    "max_threshold": 860,
+    "received_date": "2026-01-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU039",
+    "quantity": 128,
+    "min_threshold": 32,
+    "max_threshold": 256,
+    "received_date": "2026-01-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU040",
+    "quantity": 377,
+    "min_threshold": 94,
+    "max_threshold": 754,
+    "received_date": "2025-08-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU041",
+    "quantity": 136,
+    "min_threshold": 40,
+    "max_threshold": 272,
+    "received_date": "2025-10-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU042",
+    "quantity": 204,
+    "min_threshold": 61,
+    "max_threshold": 408,
+    "received_date": "2025-11-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU043",
+    "quantity": 414,
+    "min_threshold": 124,
+    "max_threshold": 828,
+    "received_date": "2025-12-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU044",
+    "quantity": 393,
+    "min_threshold": 117,
+    "max_threshold": 786,
+    "received_date": "2025-11-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU045",
+    "quantity": 275,
+    "min_threshold": 82,
+    "max_threshold": 550,
+    "received_date": "2025-06-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU046",
+    "quantity": 251,
+    "min_threshold": 75,
+    "max_threshold": 502,
+    "received_date": "2026-01-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU047",
+    "quantity": 409,
+    "min_threshold": 122,
+    "max_threshold": 818,
+    "received_date": "2025-05-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU048",
+    "quantity": 128,
+    "min_threshold": 38,
+    "max_threshold": 256,
+    "received_date": "2026-01-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU049",
+    "quantity": 59,
+    "min_threshold": 17,
+    "max_threshold": 118,
+    "received_date": "2025-12-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU050",
+    "quantity": 241,
+    "min_threshold": 72,
+    "max_threshold": 482,
+    "received_date": "2025-11-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU051",
+    "quantity": 380,
+    "min_threshold": 237,
+    "max_threshold": 948,
+    "received_date": "2025-06-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU052",
+    "quantity": 441,
+    "min_threshold": 275,
+    "max_threshold": 1100,
+    "received_date": "2025-10-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU053",
+    "quantity": 376,
+    "min_threshold": 235,
+    "max_threshold": 940,
+    "received_date": "2026-01-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU054",
+    "quantity": 182,
+    "min_threshold": 113,
+    "max_threshold": 452,
+    "received_date": "2025-08-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU055",
+    "quantity": 49,
+    "min_threshold": 30,
+    "max_threshold": 120,
+    "received_date": "2025-07-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU056",
+    "quantity": 264,
+    "min_threshold": 165,
+    "max_threshold": 660,
+    "received_date": "2025-06-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU057",
+    "quantity": 281,
+    "min_threshold": 175,
+    "max_threshold": 700,
+    "received_date": "2025-07-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU058",
+    "quantity": 446,
+    "min_threshold": 278,
+    "max_threshold": 1112,
+    "received_date": "2025-11-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU059",
+    "quantity": 203,
+    "min_threshold": 126,
+    "max_threshold": 504,
+    "received_date": "2025-09-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU060",
+    "quantity": 225,
+    "min_threshold": 140,
+    "max_threshold": 560,
+    "received_date": "2026-01-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU061",
+    "quantity": 97,
+    "min_threshold": 36,
+    "max_threshold": 194,
+    "received_date": "2025-09-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU062",
+    "quantity": 94,
+    "min_threshold": 35,
+    "max_threshold": 188,
+    "received_date": "2026-01-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU063",
+    "quantity": 438,
+    "min_threshold": 164,
+    "max_threshold": 876,
+    "received_date": "2025-05-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU064",
+    "quantity": 176,
+    "min_threshold": 66,
+    "max_threshold": 352,
+    "received_date": "2026-01-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU065",
+    "quantity": 464,
+    "min_threshold": 174,
+    "max_threshold": 928,
+    "received_date": "2026-01-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU066",
+    "quantity": 200,
+    "min_threshold": 75,
+    "max_threshold": 400,
+    "received_date": "2026-01-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU067",
+    "quantity": 102,
+    "min_threshold": 38,
+    "max_threshold": 204,
+    "received_date": "2025-03-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU068",
+    "quantity": 240,
+    "min_threshold": 90,
+    "max_threshold": 480,
+    "received_date": "2025-07-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU069",
+    "quantity": 145,
+    "min_threshold": 54,
+    "max_threshold": 290,
+    "received_date": "2025-04-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU070",
+    "quantity": 249,
+    "min_threshold": 93,
+    "max_threshold": 498,
+    "received_date": "2025-04-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU071",
+    "quantity": 80,
+    "min_threshold": 26,
+    "max_threshold": 160,
+    "received_date": "2025-03-31T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU072",
+    "quantity": 113,
+    "min_threshold": 36,
+    "max_threshold": 226,
+    "received_date": "2025-07-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU073",
+    "quantity": 475,
+    "min_threshold": 154,
+    "max_threshold": 950,
+    "received_date": "2025-09-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU074",
+    "quantity": 260,
+    "min_threshold": 84,
+    "max_threshold": 520,
+    "received_date": "2025-10-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU075",
+    "quantity": 304,
+    "min_threshold": 98,
+    "max_threshold": 608,
+    "received_date": "2025-10-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU076",
+    "quantity": 264,
+    "min_threshold": 85,
+    "max_threshold": 528,
+    "received_date": "2025-07-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU077",
+    "quantity": 155,
+    "min_threshold": 50,
+    "max_threshold": 310,
+    "received_date": "2025-03-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU078",
+    "quantity": 292,
+    "min_threshold": 94,
+    "max_threshold": 584,
+    "received_date": "2025-06-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU079",
+    "quantity": 305,
+    "min_threshold": 99,
+    "max_threshold": 610,
+    "received_date": "2026-01-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU080",
+    "quantity": 54,
+    "min_threshold": 17,
+    "max_threshold": 108,
+    "received_date": "2025-06-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU081",
+    "quantity": 129,
+    "min_threshold": 64,
+    "max_threshold": 258,
+    "received_date": "2026-01-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU082",
+    "quantity": 222,
+    "min_threshold": 111,
+    "max_threshold": 444,
+    "received_date": "2025-05-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU083",
+    "quantity": 264,
+    "min_threshold": 132,
+    "max_threshold": 528,
+    "received_date": "2025-12-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU084",
+    "quantity": 332,
+    "min_threshold": 166,
+    "max_threshold": 664,
+    "received_date": "2026-01-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU085",
+    "quantity": 248,
+    "min_threshold": 124,
+    "max_threshold": 496,
+    "received_date": "2025-08-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU086",
+    "quantity": 280,
+    "min_threshold": 140,
+    "max_threshold": 560,
+    "received_date": "2025-11-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU087",
+    "quantity": 406,
+    "min_threshold": 203,
+    "max_threshold": 812,
+    "received_date": "2025-05-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU088",
+    "quantity": 294,
+    "min_threshold": 147,
+    "max_threshold": 588,
+    "received_date": "2025-04-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU089",
+    "quantity": 480,
+    "min_threshold": 240,
+    "max_threshold": 960,
+    "received_date": "2026-02-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU090",
+    "quantity": 292,
+    "min_threshold": 146,
+    "max_threshold": 584,
+    "received_date": "2025-03-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU091",
+    "quantity": 132,
+    "min_threshold": 33,
+    "max_threshold": 264,
+    "received_date": "2025-12-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU092",
+    "quantity": 264,
+    "min_threshold": 66,
+    "max_threshold": 528,
+    "received_date": "2025-12-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU093",
+    "quantity": 134,
+    "min_threshold": 33,
+    "max_threshold": 268,
+    "received_date": "2025-05-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU094",
+    "quantity": 174,
+    "min_threshold": 43,
+    "max_threshold": 348,
+    "received_date": "2025-09-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU095",
+    "quantity": 278,
+    "min_threshold": 69,
+    "max_threshold": 556,
+    "received_date": "2025-04-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU096",
+    "quantity": 219,
+    "min_threshold": 54,
+    "max_threshold": 438,
+    "received_date": "2025-08-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU097",
+    "quantity": 214,
+    "min_threshold": 53,
+    "max_threshold": 428,
+    "received_date": "2025-02-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU098",
+    "quantity": 264,
+    "min_threshold": 66,
+    "max_threshold": 528,
+    "received_date": "2025-05-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU099",
+    "quantity": 448,
+    "min_threshold": 112,
+    "max_threshold": 896,
+    "received_date": "2025-10-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH001",
+    "sku": "SKU100",
+    "quantity": 89,
+    "min_threshold": 22,
+    "max_threshold": 178,
+    "received_date": "2025-12-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU001",
+    "quantity": 2,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2026-01-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU002",
+    "quantity": 2,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-12-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU003",
+    "quantity": 164,
+    "min_threshold": 61,
+    "max_threshold": 328,
+    "received_date": "2025-11-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU004",
+    "quantity": 256,
+    "min_threshold": 96,
+    "max_threshold": 512,
+    "received_date": "2025-05-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU005",
+    "quantity": 248,
+    "min_threshold": 93,
+    "max_threshold": 496,
+    "received_date": "2025-04-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU006",
+    "quantity": 34,
+    "min_threshold": 12,
+    "max_threshold": 68,
+    "received_date": "2025-12-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU007",
+    "quantity": 68,
+    "min_threshold": 25,
+    "max_threshold": 136,
+    "received_date": "2025-02-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU008",
+    "quantity": 106,
+    "min_threshold": 39,
+    "max_threshold": 212,
+    "received_date": "2025-05-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU009",
+    "quantity": 48,
+    "min_threshold": 18,
+    "max_threshold": 96,
+    "received_date": "2025-08-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU010",
+    "quantity": 105,
+    "min_threshold": 39,
+    "max_threshold": 210,
+    "received_date": "2025-07-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU011",
+    "quantity": 95,
+    "min_threshold": 47,
+    "max_threshold": 190,
+    "received_date": "2026-01-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU012",
+    "quantity": 187,
+    "min_threshold": 93,
+    "max_threshold": 374,
+    "received_date": "2025-08-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU013",
+    "quantity": 50,
+    "min_threshold": 25,
+    "max_threshold": 100,
+    "received_date": "2025-08-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU014",
+    "quantity": 137,
+    "min_threshold": 68,
+    "max_threshold": 274,
+    "received_date": "2025-02-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU015",
+    "quantity": 5,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-12-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU016",
+    "quantity": 211,
+    "min_threshold": 105,
+    "max_threshold": 422,
+    "received_date": "2025-05-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU017",
+    "quantity": 238,
+    "min_threshold": 119,
+    "max_threshold": 476,
+    "received_date": "2025-03-31T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU018",
+    "quantity": 109,
+    "min_threshold": 54,
+    "max_threshold": 218,
+    "received_date": "2025-10-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU019",
+    "quantity": 113,
+    "min_threshold": 56,
+    "max_threshold": 226,
+    "received_date": "2025-11-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU020",
+    "quantity": 241,
+    "min_threshold": 120,
+    "max_threshold": 482,
+    "received_date": "2026-01-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU021",
+    "quantity": 5,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-08-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU022",
+    "quantity": 240,
+    "min_threshold": 180,
+    "max_threshold": 720,
+    "received_date": "2025-03-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU023",
+    "quantity": 157,
+    "min_threshold": 117,
+    "max_threshold": 468,
+    "received_date": "2025-09-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU024",
+    "quantity": 111,
+    "min_threshold": 83,
+    "max_threshold": 332,
+    "received_date": "2025-02-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU025",
+    "quantity": 85,
+    "min_threshold": 63,
+    "max_threshold": 252,
+    "received_date": "2025-07-31T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU026",
+    "quantity": 49,
+    "min_threshold": 36,
+    "max_threshold": 144,
+    "received_date": "2025-06-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU027",
+    "quantity": 143,
+    "min_threshold": 107,
+    "max_threshold": 428,
+    "received_date": "2025-11-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU028",
+    "quantity": 265,
+    "min_threshold": 198,
+    "max_threshold": 792,
+    "received_date": "2025-08-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU029",
+    "quantity": 186,
+    "min_threshold": 139,
+    "max_threshold": 556,
+    "received_date": "2025-10-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU030",
+    "quantity": 144,
+    "min_threshold": 108,
+    "max_threshold": 432,
+    "received_date": "2026-01-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU031",
+    "quantity": 128,
+    "min_threshold": 32,
+    "max_threshold": 256,
+    "received_date": "2025-07-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU032",
+    "quantity": 198,
+    "min_threshold": 49,
+    "max_threshold": 396,
+    "received_date": "2025-09-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU033",
+    "quantity": 65,
+    "min_threshold": 16,
+    "max_threshold": 130,
+    "received_date": "2025-09-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU034",
+    "quantity": 209,
+    "min_threshold": 52,
+    "max_threshold": 418,
+    "received_date": "2025-03-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU035",
+    "quantity": 3,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-03-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU036",
+    "quantity": 199,
+    "min_threshold": 49,
+    "max_threshold": 398,
+    "received_date": "2026-01-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU037",
+    "quantity": 89,
+    "min_threshold": 22,
+    "max_threshold": 178,
+    "received_date": "2025-10-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU038",
+    "quantity": 4,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-09-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU039",
+    "quantity": 49,
+    "min_threshold": 12,
+    "max_threshold": 98,
+    "received_date": "2025-12-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU040",
+    "quantity": 252,
+    "min_threshold": 63,
+    "max_threshold": 504,
+    "received_date": "2025-08-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU041",
+    "quantity": 190,
+    "min_threshold": 57,
+    "max_threshold": 380,
+    "received_date": "2025-07-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU042",
+    "quantity": 291,
+    "min_threshold": 87,
+    "max_threshold": 582,
+    "received_date": "2025-12-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU043",
+    "quantity": 227,
+    "min_threshold": 68,
+    "max_threshold": 454,
+    "received_date": "2025-04-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU044",
+    "quantity": 2,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2026-01-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU045",
+    "quantity": 253,
+    "min_threshold": 75,
+    "max_threshold": 506,
+    "received_date": "2026-02-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU046",
+    "quantity": 296,
+    "min_threshold": 88,
+    "max_threshold": 592,
+    "received_date": "2025-05-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU047",
+    "quantity": 130,
+    "min_threshold": 39,
+    "max_threshold": 260,
+    "received_date": "2025-08-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU048",
+    "quantity": 250,
+    "min_threshold": 75,
+    "max_threshold": 500,
+    "received_date": "2026-01-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU049",
+    "quantity": 199,
+    "min_threshold": 59,
+    "max_threshold": 398,
+    "received_date": "2025-03-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU050",
+    "quantity": 190,
+    "min_threshold": 57,
+    "max_threshold": 380,
+    "received_date": "2025-03-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU051",
+    "quantity": 93,
+    "min_threshold": 58,
+    "max_threshold": 232,
+    "received_date": "2025-09-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU052",
+    "quantity": 289,
+    "min_threshold": 180,
+    "max_threshold": 720,
+    "received_date": "2025-09-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU053",
+    "quantity": 239,
+    "min_threshold": 149,
+    "max_threshold": 596,
+    "received_date": "2025-08-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU054",
+    "quantity": 236,
+    "min_threshold": 147,
+    "max_threshold": 588,
+    "received_date": "2025-02-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU055",
+    "quantity": 181,
+    "min_threshold": 113,
+    "max_threshold": 452,
+    "received_date": "2025-05-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU056",
+    "quantity": 1,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-07-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU057",
+    "quantity": 224,
+    "min_threshold": 140,
+    "max_threshold": 560,
+    "received_date": "2025-03-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU058",
+    "quantity": 119,
+    "min_threshold": 74,
+    "max_threshold": 296,
+    "received_date": "2025-04-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU059",
+    "quantity": 3,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-05-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU060",
+    "quantity": 30,
+    "min_threshold": 18,
+    "max_threshold": 72,
+    "received_date": "2025-09-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU061",
+    "quantity": 176,
+    "min_threshold": 66,
+    "max_threshold": 352,
+    "received_date": "2025-10-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU062",
+    "quantity": 250,
+    "min_threshold": 93,
+    "max_threshold": 500,
+    "received_date": "2025-04-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU063",
+    "quantity": 194,
+    "min_threshold": 72,
+    "max_threshold": 388,
+    "received_date": "2025-06-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU064",
+    "quantity": 256,
+    "min_threshold": 96,
+    "max_threshold": 512,
+    "received_date": "2025-06-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU065",
+    "quantity": 139,
+    "min_threshold": 52,
+    "max_threshold": 278,
+    "received_date": "2025-05-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU066",
+    "quantity": 272,
+    "min_threshold": 102,
+    "max_threshold": 544,
+    "received_date": "2025-11-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU067",
+    "quantity": 73,
+    "min_threshold": 27,
+    "max_threshold": 146,
+    "received_date": "2025-09-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU068",
+    "quantity": 293,
+    "min_threshold": 109,
+    "max_threshold": 586,
+    "received_date": "2025-03-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU069",
+    "quantity": 0,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-10-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU070",
+    "quantity": 188,
+    "min_threshold": 70,
+    "max_threshold": 376,
+    "received_date": "2025-10-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU071",
+    "quantity": 131,
+    "min_threshold": 42,
+    "max_threshold": 262,
+    "received_date": "2025-11-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU072",
+    "quantity": 42,
+    "min_threshold": 13,
+    "max_threshold": 84,
+    "received_date": "2026-01-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU073",
+    "quantity": 155,
+    "min_threshold": 50,
+    "max_threshold": 310,
+    "received_date": "2025-06-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU074",
+    "quantity": 67,
+    "min_threshold": 21,
+    "max_threshold": 134,
+    "received_date": "2025-06-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU075",
+    "quantity": 242,
+    "min_threshold": 78,
+    "max_threshold": 484,
+    "received_date": "2025-03-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU076",
+    "quantity": 129,
+    "min_threshold": 41,
+    "max_threshold": 258,
+    "received_date": "2025-02-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU077",
+    "quantity": 226,
+    "min_threshold": 73,
+    "max_threshold": 452,
+    "received_date": "2025-06-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU078",
+    "quantity": 234,
+    "min_threshold": 76,
+    "max_threshold": 468,
+    "received_date": "2025-10-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU079",
+    "quantity": 105,
+    "min_threshold": 34,
+    "max_threshold": 210,
+    "received_date": "2025-03-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU080",
+    "quantity": 32,
+    "min_threshold": 10,
+    "max_threshold": 64,
+    "received_date": "2025-12-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU081",
+    "quantity": 247,
+    "min_threshold": 123,
+    "max_threshold": 494,
+    "received_date": "2025-10-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU082",
+    "quantity": 120,
+    "min_threshold": 60,
+    "max_threshold": 240,
+    "received_date": "2025-02-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU083",
+    "quantity": 3,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2026-01-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU084",
+    "quantity": 157,
+    "min_threshold": 78,
+    "max_threshold": 314,
+    "received_date": "2025-12-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU085",
+    "quantity": 263,
+    "min_threshold": 131,
+    "max_threshold": 526,
+    "received_date": "2025-12-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU086",
+    "quantity": 267,
+    "min_threshold": 133,
+    "max_threshold": 534,
+    "received_date": "2025-03-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU087",
+    "quantity": 192,
+    "min_threshold": 96,
+    "max_threshold": 384,
+    "received_date": "2025-06-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU088",
+    "quantity": 3,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-05-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU089",
+    "quantity": 258,
+    "min_threshold": 129,
+    "max_threshold": 516,
+    "received_date": "2025-11-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU090",
+    "quantity": 273,
+    "min_threshold": 136,
+    "max_threshold": 546,
+    "received_date": "2025-06-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU091",
+    "quantity": 162,
+    "min_threshold": 40,
+    "max_threshold": 324,
+    "received_date": "2025-10-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU092",
+    "quantity": 171,
+    "min_threshold": 42,
+    "max_threshold": 342,
+    "received_date": "2025-05-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU093",
+    "quantity": 5,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-10-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU094",
+    "quantity": 170,
+    "min_threshold": 42,
+    "max_threshold": 340,
+    "received_date": "2025-07-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU095",
+    "quantity": 69,
+    "min_threshold": 17,
+    "max_threshold": 138,
+    "received_date": "2025-09-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU096",
+    "quantity": 150,
+    "min_threshold": 37,
+    "max_threshold": 300,
+    "received_date": "2025-09-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU097",
+    "quantity": 2,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-05-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU098",
+    "quantity": 71,
+    "min_threshold": 17,
+    "max_threshold": 142,
+    "received_date": "2025-12-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU099",
+    "quantity": 1,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-07-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "sku": "SKU100",
+    "quantity": 108,
+    "min_threshold": 27,
+    "max_threshold": 216,
+    "received_date": "2025-02-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU001",
+    "quantity": 139,
+    "min_threshold": 52,
+    "max_threshold": 278,
+    "received_date": "2026-01-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU002",
+    "quantity": 242,
+    "min_threshold": 90,
+    "max_threshold": 484,
+    "received_date": "2025-07-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU003",
+    "quantity": 597,
+    "min_threshold": 223,
+    "max_threshold": 1194,
+    "received_date": "2025-05-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU004",
+    "quantity": 268,
+    "min_threshold": 100,
+    "max_threshold": 536,
+    "received_date": "2025-07-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU005",
+    "quantity": 61,
+    "min_threshold": 22,
+    "max_threshold": 122,
+    "received_date": "2025-10-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU006",
+    "quantity": 735,
+    "min_threshold": 275,
+    "max_threshold": 1470,
+    "received_date": "2025-07-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU007",
+    "quantity": 40,
+    "min_threshold": 15,
+    "max_threshold": 80,
+    "received_date": "2025-04-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU008",
+    "quantity": 224,
+    "min_threshold": 84,
+    "max_threshold": 448,
+    "received_date": "2025-06-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU009",
+    "quantity": 99,
+    "min_threshold": 37,
+    "max_threshold": 198,
+    "received_date": "2025-08-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU010",
+    "quantity": 182,
+    "min_threshold": 68,
+    "max_threshold": 364,
+    "received_date": "2025-07-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU011",
+    "quantity": 244,
+    "min_threshold": 122,
+    "max_threshold": 488,
+    "received_date": "2025-05-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU012",
+    "quantity": 426,
+    "min_threshold": 213,
+    "max_threshold": 852,
+    "received_date": "2025-06-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU013",
+    "quantity": 142,
+    "min_threshold": 71,
+    "max_threshold": 284,
+    "received_date": "2025-09-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU014",
+    "quantity": 253,
+    "min_threshold": 126,
+    "max_threshold": 506,
+    "received_date": "2025-03-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU015",
+    "quantity": 132,
+    "min_threshold": 66,
+    "max_threshold": 264,
+    "received_date": "2025-07-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU016",
+    "quantity": 202,
+    "min_threshold": 101,
+    "max_threshold": 404,
+    "received_date": "2025-03-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU017",
+    "quantity": 237,
+    "min_threshold": 118,
+    "max_threshold": 474,
+    "received_date": "2025-11-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU018",
+    "quantity": 807,
+    "min_threshold": 403,
+    "max_threshold": 1614,
+    "received_date": "2025-12-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU019",
+    "quantity": 43,
+    "min_threshold": 21,
+    "max_threshold": 86,
+    "received_date": "2025-07-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU020",
+    "quantity": 43,
+    "min_threshold": 21,
+    "max_threshold": 86,
+    "received_date": "2025-06-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU021",
+    "quantity": 747,
+    "min_threshold": 560,
+    "max_threshold": 2240,
+    "received_date": "2025-12-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU022",
+    "quantity": 266,
+    "min_threshold": 199,
+    "max_threshold": 796,
+    "received_date": "2025-11-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU023",
+    "quantity": 55,
+    "min_threshold": 41,
+    "max_threshold": 164,
+    "received_date": "2025-10-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU024",
+    "quantity": 672,
+    "min_threshold": 504,
+    "max_threshold": 2016,
+    "received_date": "2025-08-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU025",
+    "quantity": 138,
+    "min_threshold": 103,
+    "max_threshold": 412,
+    "received_date": "2025-06-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU026",
+    "quantity": 197,
+    "min_threshold": 147,
+    "max_threshold": 588,
+    "received_date": "2025-09-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU027",
+    "quantity": 672,
+    "min_threshold": 504,
+    "max_threshold": 2016,
+    "received_date": "2025-09-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU028",
+    "quantity": 245,
+    "min_threshold": 183,
+    "max_threshold": 732,
+    "received_date": "2025-10-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU029",
+    "quantity": 71,
+    "min_threshold": 53,
+    "max_threshold": 212,
+    "received_date": "2025-06-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU030",
+    "quantity": 117,
+    "min_threshold": 87,
+    "max_threshold": 348,
+    "received_date": "2025-05-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU031",
+    "quantity": 56,
+    "min_threshold": 14,
+    "max_threshold": 112,
+    "received_date": "2025-08-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU032",
+    "quantity": 144,
+    "min_threshold": 36,
+    "max_threshold": 288,
+    "received_date": "2025-03-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU033",
+    "quantity": 195,
+    "min_threshold": 48,
+    "max_threshold": 390,
+    "received_date": "2025-03-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU034",
+    "quantity": 50,
+    "min_threshold": 12,
+    "max_threshold": 100,
+    "received_date": "2025-01-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU035",
+    "quantity": 156,
+    "min_threshold": 39,
+    "max_threshold": 312,
+    "received_date": "2025-11-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU036",
+    "quantity": 120,
+    "min_threshold": 30,
+    "max_threshold": 240,
+    "received_date": "2025-03-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU037",
+    "quantity": 108,
+    "min_threshold": 27,
+    "max_threshold": 216,
+    "received_date": "2025-10-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU038",
+    "quantity": 94,
+    "min_threshold": 23,
+    "max_threshold": 188,
+    "received_date": "2025-06-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU039",
+    "quantity": 264,
+    "min_threshold": 66,
+    "max_threshold": 528,
+    "received_date": "2024-08-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU040",
+    "quantity": 141,
+    "min_threshold": 35,
+    "max_threshold": 282,
+    "received_date": "2025-06-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU041",
+    "quantity": 161,
+    "min_threshold": 48,
+    "max_threshold": 322,
+    "received_date": "2025-08-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU042",
+    "quantity": 345,
+    "min_threshold": 103,
+    "max_threshold": 690,
+    "received_date": "2025-04-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU043",
+    "quantity": 88,
+    "min_threshold": 26,
+    "max_threshold": 176,
+    "received_date": "2025-11-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU044",
+    "quantity": 189,
+    "min_threshold": 56,
+    "max_threshold": 378,
+    "received_date": "2025-12-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU045",
+    "quantity": 129,
+    "min_threshold": 38,
+    "max_threshold": 258,
+    "received_date": "2025-09-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU046",
+    "quantity": 222,
+    "min_threshold": 66,
+    "max_threshold": 444,
+    "received_date": "2025-07-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU047",
+    "quantity": 131,
+    "min_threshold": 39,
+    "max_threshold": 262,
+    "received_date": "2026-01-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU048",
+    "quantity": 462,
+    "min_threshold": 138,
+    "max_threshold": 924,
+    "received_date": "2025-12-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU049",
+    "quantity": 184,
+    "min_threshold": 55,
+    "max_threshold": 368,
+    "received_date": "2025-02-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU050",
+    "quantity": 91,
+    "min_threshold": 27,
+    "max_threshold": 182,
+    "received_date": "2025-04-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU051",
+    "quantity": 153,
+    "min_threshold": 95,
+    "max_threshold": 380,
+    "received_date": "2025-08-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU052",
+    "quantity": 249,
+    "min_threshold": 155,
+    "max_threshold": 620,
+    "received_date": "2025-03-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU053",
+    "quantity": 219,
+    "min_threshold": 136,
+    "max_threshold": 544,
+    "received_date": "2026-01-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU054",
+    "quantity": 867,
+    "min_threshold": 541,
+    "max_threshold": 2164,
+    "received_date": "2025-03-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU055",
+    "quantity": 204,
+    "min_threshold": 127,
+    "max_threshold": 508,
+    "received_date": "2026-02-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU056",
+    "quantity": 245,
+    "min_threshold": 153,
+    "max_threshold": 612,
+    "received_date": "2025-06-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU057",
+    "quantity": 252,
+    "min_threshold": 157,
+    "max_threshold": 628,
+    "received_date": "2025-07-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU058",
+    "quantity": 215,
+    "min_threshold": 134,
+    "max_threshold": 536,
+    "received_date": "2025-03-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU059",
+    "quantity": 265,
+    "min_threshold": 165,
+    "max_threshold": 660,
+    "received_date": "2025-02-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU060",
+    "quantity": 324,
+    "min_threshold": 202,
+    "max_threshold": 808,
+    "received_date": "2025-07-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU061",
+    "quantity": 120,
+    "min_threshold": 45,
+    "max_threshold": 240,
+    "received_date": "2025-05-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU062",
+    "quantity": 168,
+    "min_threshold": 63,
+    "max_threshold": 336,
+    "received_date": "2025-04-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU063",
+    "quantity": 831,
+    "min_threshold": 311,
+    "max_threshold": 1662,
+    "received_date": "2025-06-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU064",
+    "quantity": 253,
+    "min_threshold": 94,
+    "max_threshold": 506,
+    "received_date": "2025-04-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU065",
+    "quantity": 167,
+    "min_threshold": 62,
+    "max_threshold": 334,
+    "received_date": "2024-10-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU066",
+    "quantity": 465,
+    "min_threshold": 174,
+    "max_threshold": 930,
+    "received_date": "2025-12-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU067",
+    "quantity": 172,
+    "min_threshold": 64,
+    "max_threshold": 344,
+    "received_date": "2025-06-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU068",
+    "quantity": 154,
+    "min_threshold": 57,
+    "max_threshold": 308,
+    "received_date": "2025-06-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU069",
+    "quantity": 672,
+    "min_threshold": 252,
+    "max_threshold": 1344,
+    "received_date": "2025-08-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU070",
+    "quantity": 44,
+    "min_threshold": 16,
+    "max_threshold": 88,
+    "received_date": "2025-06-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU071",
+    "quantity": 196,
+    "min_threshold": 63,
+    "max_threshold": 392,
+    "received_date": "2025-11-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU072",
+    "quantity": 837,
+    "min_threshold": 272,
+    "max_threshold": 1674,
+    "received_date": "2025-10-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU073",
+    "quantity": 211,
+    "min_threshold": 68,
+    "max_threshold": 422,
+    "received_date": "2025-10-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU074",
+    "quantity": 204,
+    "min_threshold": 66,
+    "max_threshold": 408,
+    "received_date": "2025-09-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU075",
+    "quantity": 513,
+    "min_threshold": 166,
+    "max_threshold": 1026,
+    "received_date": "2025-05-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU076",
+    "quantity": 35,
+    "min_threshold": 11,
+    "max_threshold": 70,
+    "received_date": "2025-05-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU077",
+    "quantity": 127,
+    "min_threshold": 41,
+    "max_threshold": 254,
+    "received_date": "2025-12-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU078",
+    "quantity": 459,
+    "min_threshold": 149,
+    "max_threshold": 918,
+    "received_date": "2025-04-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU079",
+    "quantity": 280,
+    "min_threshold": 91,
+    "max_threshold": 560,
+    "received_date": "2025-05-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU080",
+    "quantity": 153,
+    "min_threshold": 49,
+    "max_threshold": 306,
+    "received_date": "2025-02-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU081",
+    "quantity": 819,
+    "min_threshold": 409,
+    "max_threshold": 1638,
+    "received_date": "2024-09-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU082",
+    "quantity": 259,
+    "min_threshold": 129,
+    "max_threshold": 518,
+    "received_date": "2025-01-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU083",
+    "quantity": 77,
+    "min_threshold": 38,
+    "max_threshold": 154,
+    "received_date": "2025-09-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU084",
+    "quantity": 429,
+    "min_threshold": 214,
+    "max_threshold": 858,
+    "received_date": "2025-07-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU085",
+    "quantity": 154,
+    "min_threshold": 77,
+    "max_threshold": 308,
+    "received_date": "2025-09-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU086",
+    "quantity": 218,
+    "min_threshold": 109,
+    "max_threshold": 436,
+    "received_date": "2025-06-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU087",
+    "quantity": 618,
+    "min_threshold": 309,
+    "max_threshold": 1236,
+    "received_date": "2025-07-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU088",
+    "quantity": 199,
+    "min_threshold": 99,
+    "max_threshold": 398,
+    "received_date": "2025-08-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU089",
+    "quantity": 262,
+    "min_threshold": 131,
+    "max_threshold": 524,
+    "received_date": "2025-09-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU090",
+    "quantity": 558,
+    "min_threshold": 279,
+    "max_threshold": 1116,
+    "received_date": "2025-10-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU091",
+    "quantity": 148,
+    "min_threshold": 37,
+    "max_threshold": 296,
+    "received_date": "2025-12-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU092",
+    "quantity": 128,
+    "min_threshold": 32,
+    "max_threshold": 256,
+    "received_date": "2025-09-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU093",
+    "quantity": 273,
+    "min_threshold": 68,
+    "max_threshold": 546,
+    "received_date": "2023-08-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU094",
+    "quantity": 124,
+    "min_threshold": 31,
+    "max_threshold": 248,
+    "received_date": "2025-11-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU095",
+    "quantity": 140,
+    "min_threshold": 35,
+    "max_threshold": 280,
+    "received_date": "2025-06-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU096",
+    "quantity": 513,
+    "min_threshold": 128,
+    "max_threshold": 1026,
+    "received_date": "2025-04-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU097",
+    "quantity": 298,
+    "min_threshold": 74,
+    "max_threshold": 596,
+    "received_date": "2025-04-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU098",
+    "quantity": 174,
+    "min_threshold": 43,
+    "max_threshold": 348,
+    "received_date": "2023-12-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU099",
+    "quantity": 387,
+    "min_threshold": 96,
+    "max_threshold": 774,
+    "received_date": "2025-09-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "sku": "SKU100",
+    "quantity": 146,
+    "min_threshold": 36,
+    "max_threshold": 292,
+    "received_date": "2025-08-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU001",
+    "quantity": 2,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2026-02-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU002",
+    "quantity": 2,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2026-01-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU003",
+    "quantity": 171,
+    "min_threshold": 64,
+    "max_threshold": 342,
+    "received_date": "2025-05-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU004",
+    "quantity": 179,
+    "min_threshold": 67,
+    "max_threshold": 358,
+    "received_date": "2025-02-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU005",
+    "quantity": 94,
+    "min_threshold": 35,
+    "max_threshold": 188,
+    "received_date": "2025-03-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU006",
+    "quantity": 843,
+    "min_threshold": 316,
+    "max_threshold": 1686,
+    "received_date": "2025-12-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU007",
+    "quantity": 36,
+    "min_threshold": 13,
+    "max_threshold": 72,
+    "received_date": "2025-04-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU008",
+    "quantity": 175,
+    "min_threshold": 65,
+    "max_threshold": 350,
+    "received_date": "2025-06-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU009",
+    "quantity": 825,
+    "min_threshold": 309,
+    "max_threshold": 1650,
+    "received_date": "2025-07-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU010",
+    "quantity": 204,
+    "min_threshold": 76,
+    "max_threshold": 408,
+    "received_date": "2025-11-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU011",
+    "quantity": 56,
+    "min_threshold": 28,
+    "max_threshold": 112,
+    "received_date": "2025-10-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU012",
+    "quantity": 822,
+    "min_threshold": 411,
+    "max_threshold": 1644,
+    "received_date": "2025-12-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU013",
+    "quantity": 63,
+    "min_threshold": 31,
+    "max_threshold": 126,
+    "received_date": "2025-07-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU014",
+    "quantity": 281,
+    "min_threshold": 140,
+    "max_threshold": 562,
+    "received_date": "2026-01-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU015",
+    "quantity": 3,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-11-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU016",
+    "quantity": 185,
+    "min_threshold": 92,
+    "max_threshold": 370,
+    "received_date": "2025-12-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU017",
+    "quantity": 157,
+    "min_threshold": 78,
+    "max_threshold": 314,
+    "received_date": "2025-12-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU018",
+    "quantity": 729,
+    "min_threshold": 364,
+    "max_threshold": 1458,
+    "received_date": "2025-04-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU019",
+    "quantity": 145,
+    "min_threshold": 72,
+    "max_threshold": 290,
+    "received_date": "2025-05-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU020",
+    "quantity": 224,
+    "min_threshold": 112,
+    "max_threshold": 448,
+    "received_date": "2025-06-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU021",
+    "quantity": 6,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-04-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU022",
+    "quantity": 249,
+    "min_threshold": 186,
+    "max_threshold": 744,
+    "received_date": "2025-09-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU023",
+    "quantity": 60,
+    "min_threshold": 45,
+    "max_threshold": 180,
+    "received_date": "2025-04-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU024",
+    "quantity": 240,
+    "min_threshold": 180,
+    "max_threshold": 720,
+    "received_date": "2025-10-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU025",
+    "quantity": 138,
+    "min_threshold": 103,
+    "max_threshold": 412,
+    "received_date": "2025-09-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU026",
+    "quantity": 71,
+    "min_threshold": 53,
+    "max_threshold": 212,
+    "received_date": "2025-11-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU027",
+    "quantity": 456,
+    "min_threshold": 342,
+    "max_threshold": 1368,
+    "received_date": "2025-11-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU028",
+    "quantity": 68,
+    "min_threshold": 51,
+    "max_threshold": 204,
+    "received_date": "2025-11-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU029",
+    "quantity": 31,
+    "min_threshold": 23,
+    "max_threshold": 92,
+    "received_date": "2025-07-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU030",
+    "quantity": 780,
+    "min_threshold": 585,
+    "max_threshold": 2340,
+    "received_date": "2025-02-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU031",
+    "quantity": 270,
+    "min_threshold": 67,
+    "max_threshold": 540,
+    "received_date": "2025-09-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU032",
+    "quantity": 46,
+    "min_threshold": 11,
+    "max_threshold": 92,
+    "received_date": "2025-10-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU033",
+    "quantity": 531,
+    "min_threshold": 132,
+    "max_threshold": 1062,
+    "received_date": "2025-02-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU034",
+    "quantity": 174,
+    "min_threshold": 43,
+    "max_threshold": 348,
+    "received_date": "2025-02-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU035",
+    "quantity": 0,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-02-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU036",
+    "quantity": 447,
+    "min_threshold": 111,
+    "max_threshold": 894,
+    "received_date": "2025-09-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU037",
+    "quantity": 131,
+    "min_threshold": 32,
+    "max_threshold": 262,
+    "received_date": "2025-07-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU038",
+    "quantity": 4,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-10-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU039",
+    "quantity": 318,
+    "min_threshold": 79,
+    "max_threshold": 636,
+    "received_date": "2025-09-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU040",
+    "quantity": 102,
+    "min_threshold": 25,
+    "max_threshold": 204,
+    "received_date": "2026-01-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU041",
+    "quantity": 60,
+    "min_threshold": 18,
+    "max_threshold": 120,
+    "received_date": "2025-11-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU042",
+    "quantity": 561,
+    "min_threshold": 168,
+    "max_threshold": 1122,
+    "received_date": "2025-04-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU043",
+    "quantity": 177,
+    "min_threshold": 53,
+    "max_threshold": 354,
+    "received_date": "2025-07-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU044",
+    "quantity": 3,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-02-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU045",
+    "quantity": 555,
+    "min_threshold": 166,
+    "max_threshold": 1110,
+    "received_date": "2025-02-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU046",
+    "quantity": 236,
+    "min_threshold": 70,
+    "max_threshold": 472,
+    "received_date": "2025-09-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU047",
+    "quantity": 286,
+    "min_threshold": 85,
+    "max_threshold": 572,
+    "received_date": "2025-05-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU048",
+    "quantity": 846,
+    "min_threshold": 253,
+    "max_threshold": 1692,
+    "received_date": "2025-07-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU049",
+    "quantity": 71,
+    "min_threshold": 21,
+    "max_threshold": 142,
+    "received_date": "2025-04-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU050",
+    "quantity": 50,
+    "min_threshold": 15,
+    "max_threshold": 100,
+    "received_date": "2025-07-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU051",
+    "quantity": 585,
+    "min_threshold": 365,
+    "max_threshold": 1460,
+    "received_date": "2025-04-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU052",
+    "quantity": 158,
+    "min_threshold": 98,
+    "max_threshold": 392,
+    "received_date": "2026-01-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU053",
+    "quantity": 76,
+    "min_threshold": 47,
+    "max_threshold": 188,
+    "received_date": "2025-10-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU054",
+    "quantity": 120,
+    "min_threshold": 75,
+    "max_threshold": 300,
+    "received_date": "2025-03-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU055",
+    "quantity": 167,
+    "min_threshold": 104,
+    "max_threshold": 416,
+    "received_date": "2025-04-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU056",
+    "quantity": 1,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-06-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU057",
+    "quantity": 885,
+    "min_threshold": 553,
+    "max_threshold": 2212,
+    "received_date": "2025-03-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU058",
+    "quantity": 256,
+    "min_threshold": 160,
+    "max_threshold": 640,
+    "received_date": "2025-09-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU059",
+    "quantity": 4,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-07-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU060",
+    "quantity": 843,
+    "min_threshold": 526,
+    "max_threshold": 2104,
+    "received_date": "2025-12-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU061",
+    "quantity": 270,
+    "min_threshold": 101,
+    "max_threshold": 540,
+    "received_date": "2025-08-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU062",
+    "quantity": 239,
+    "min_threshold": 89,
+    "max_threshold": 478,
+    "received_date": "2025-08-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU063",
+    "quantity": 582,
+    "min_threshold": 218,
+    "max_threshold": 1164,
+    "received_date": "2025-03-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU064",
+    "quantity": 83,
+    "min_threshold": 31,
+    "max_threshold": 166,
+    "received_date": "2025-11-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU065",
+    "quantity": 198,
+    "min_threshold": 74,
+    "max_threshold": 396,
+    "received_date": "2025-07-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU066",
+    "quantity": 849,
+    "min_threshold": 318,
+    "max_threshold": 1698,
+    "received_date": "2025-09-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU067",
+    "quantity": 235,
+    "min_threshold": 88,
+    "max_threshold": 470,
+    "received_date": "2025-05-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU068",
+    "quantity": 48,
+    "min_threshold": 18,
+    "max_threshold": 96,
+    "received_date": "2025-06-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU069",
+    "quantity": 6,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-10-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU070",
+    "quantity": 195,
+    "min_threshold": 73,
+    "max_threshold": 390,
+    "received_date": "2025-12-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU071",
+    "quantity": 236,
+    "min_threshold": 76,
+    "max_threshold": 472,
+    "received_date": "2025-05-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU072",
+    "quantity": 90,
+    "min_threshold": 29,
+    "max_threshold": 180,
+    "received_date": "2025-03-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU073",
+    "quantity": 266,
+    "min_threshold": 86,
+    "max_threshold": 532,
+    "received_date": "2025-07-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU074",
+    "quantity": 57,
+    "min_threshold": 18,
+    "max_threshold": 114,
+    "received_date": "2025-11-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU075",
+    "quantity": 885,
+    "min_threshold": 287,
+    "max_threshold": 1770,
+    "received_date": "2025-08-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU076",
+    "quantity": 285,
+    "min_threshold": 92,
+    "max_threshold": 570,
+    "received_date": "2025-03-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU077",
+    "quantity": 256,
+    "min_threshold": 83,
+    "max_threshold": 512,
+    "received_date": "2026-01-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU078",
+    "quantity": 402,
+    "min_threshold": 130,
+    "max_threshold": 804,
+    "received_date": "2025-09-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU079",
+    "quantity": 97,
+    "min_threshold": 31,
+    "max_threshold": 194,
+    "received_date": "2025-09-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU080",
+    "quantity": 254,
+    "min_threshold": 82,
+    "max_threshold": 508,
+    "received_date": "2025-02-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU081",
+    "quantity": 834,
+    "min_threshold": 417,
+    "max_threshold": 1668,
+    "received_date": "2025-12-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU082",
+    "quantity": 44,
+    "min_threshold": 22,
+    "max_threshold": 88,
+    "received_date": "2025-03-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU083",
+    "quantity": 5,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-11-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU084",
+    "quantity": 567,
+    "min_threshold": 283,
+    "max_threshold": 1134,
+    "received_date": "2025-05-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU085",
+    "quantity": 37,
+    "min_threshold": 18,
+    "max_threshold": 74,
+    "received_date": "2025-05-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU086",
+    "quantity": 238,
+    "min_threshold": 119,
+    "max_threshold": 476,
+    "received_date": "2025-12-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU087",
+    "quantity": 435,
+    "min_threshold": 217,
+    "max_threshold": 870,
+    "received_date": "2025-12-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU088",
+    "quantity": 0,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-03-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU089",
+    "quantity": 108,
+    "min_threshold": 54,
+    "max_threshold": 216,
+    "received_date": "2025-06-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU090",
+    "quantity": 537,
+    "min_threshold": 268,
+    "max_threshold": 1074,
+    "received_date": "2025-05-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU091",
+    "quantity": 169,
+    "min_threshold": 42,
+    "max_threshold": 338,
+    "received_date": "2025-07-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU092",
+    "quantity": 277,
+    "min_threshold": 69,
+    "max_threshold": 554,
+    "received_date": "2025-06-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU093",
+    "quantity": 9,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-05-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU094",
+    "quantity": 104,
+    "min_threshold": 26,
+    "max_threshold": 208,
+    "received_date": "2025-07-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU095",
+    "quantity": 127,
+    "min_threshold": 31,
+    "max_threshold": 254,
+    "received_date": "2025-04-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU096",
+    "quantity": 870,
+    "min_threshold": 217,
+    "max_threshold": 1740,
+    "received_date": "2025-12-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU097",
+    "quantity": 2,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-07-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU098",
+    "quantity": 204,
+    "min_threshold": 51,
+    "max_threshold": 408,
+    "received_date": "2025-05-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU099",
+    "quantity": 0,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-09-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "sku": "SKU100",
+    "quantity": 182,
+    "min_threshold": 45,
+    "max_threshold": 364,
+    "received_date": "2025-04-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU001",
+    "quantity": 1,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-06-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU002",
+    "quantity": 2,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-08-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU003",
+    "quantity": 223,
+    "min_threshold": 83,
+    "max_threshold": 446,
+    "received_date": "2025-06-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU004",
+    "quantity": 194,
+    "min_threshold": 72,
+    "max_threshold": 388,
+    "received_date": "2025-11-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU005",
+    "quantity": 152,
+    "min_threshold": 57,
+    "max_threshold": 304,
+    "received_date": "2025-04-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU006",
+    "quantity": 226,
+    "min_threshold": 84,
+    "max_threshold": 452,
+    "received_date": "2025-10-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU007",
+    "quantity": 240,
+    "min_threshold": 90,
+    "max_threshold": 480,
+    "received_date": "2026-01-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU008",
+    "quantity": 192,
+    "min_threshold": 72,
+    "max_threshold": 384,
+    "received_date": "2025-06-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU009",
+    "quantity": 225,
+    "min_threshold": 84,
+    "max_threshold": 450,
+    "received_date": "2025-07-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU010",
+    "quantity": 107,
+    "min_threshold": 40,
+    "max_threshold": 214,
+    "received_date": "2025-06-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU011",
+    "quantity": 48,
+    "min_threshold": 24,
+    "max_threshold": 96,
+    "received_date": "2025-12-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU012",
+    "quantity": 287,
+    "min_threshold": 143,
+    "max_threshold": 574,
+    "received_date": "2025-04-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU013",
+    "quantity": 199,
+    "min_threshold": 99,
+    "max_threshold": 398,
+    "received_date": "2025-12-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU014",
+    "quantity": 255,
+    "min_threshold": 127,
+    "max_threshold": 510,
+    "received_date": "2025-06-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU015",
+    "quantity": 3,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2026-02-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU016",
+    "quantity": 103,
+    "min_threshold": 51,
+    "max_threshold": 206,
+    "received_date": "2025-07-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU017",
+    "quantity": 109,
+    "min_threshold": 54,
+    "max_threshold": 218,
+    "received_date": "2026-01-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU018",
+    "quantity": 270,
+    "min_threshold": 135,
+    "max_threshold": 540,
+    "received_date": "2025-09-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU019",
+    "quantity": 203,
+    "min_threshold": 101,
+    "max_threshold": 406,
+    "received_date": "2025-03-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU020",
+    "quantity": 233,
+    "min_threshold": 116,
+    "max_threshold": 466,
+    "received_date": "2025-06-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU021",
+    "quantity": 5,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-05-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU022",
+    "quantity": 224,
+    "min_threshold": 168,
+    "max_threshold": 672,
+    "received_date": "2025-09-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU023",
+    "quantity": 279,
+    "min_threshold": 209,
+    "max_threshold": 836,
+    "received_date": "2025-07-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU024",
+    "quantity": 48,
+    "min_threshold": 36,
+    "max_threshold": 144,
+    "received_date": "2025-04-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU025",
+    "quantity": 65,
+    "min_threshold": 48,
+    "max_threshold": 192,
+    "received_date": "2025-10-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU026",
+    "quantity": 177,
+    "min_threshold": 132,
+    "max_threshold": 528,
+    "received_date": "2025-10-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU027",
+    "quantity": 76,
+    "min_threshold": 57,
+    "max_threshold": 228,
+    "received_date": "2025-07-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU028",
+    "quantity": 80,
+    "min_threshold": 60,
+    "max_threshold": 240,
+    "received_date": "2025-03-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU029",
+    "quantity": 81,
+    "min_threshold": 60,
+    "max_threshold": 240,
+    "received_date": "2025-06-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU030",
+    "quantity": 115,
+    "min_threshold": 86,
+    "max_threshold": 344,
+    "received_date": "2025-02-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU031",
+    "quantity": 183,
+    "min_threshold": 45,
+    "max_threshold": 366,
+    "received_date": "2026-01-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU032",
+    "quantity": 53,
+    "min_threshold": 13,
+    "max_threshold": 106,
+    "received_date": "2025-08-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU033",
+    "quantity": 58,
+    "min_threshold": 14,
+    "max_threshold": 116,
+    "received_date": "2025-09-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU034",
+    "quantity": 213,
+    "min_threshold": 53,
+    "max_threshold": 426,
+    "received_date": "2024-10-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU035",
+    "quantity": 1,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-10-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU036",
+    "quantity": 240,
+    "min_threshold": 60,
+    "max_threshold": 480,
+    "received_date": "2025-04-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU037",
+    "quantity": 122,
+    "min_threshold": 30,
+    "max_threshold": 244,
+    "received_date": "2025-11-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU038",
+    "quantity": 0,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-04-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU039",
+    "quantity": 225,
+    "min_threshold": 56,
+    "max_threshold": 450,
+    "received_date": "2024-11-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU040",
+    "quantity": 284,
+    "min_threshold": 71,
+    "max_threshold": 568,
+    "received_date": "2025-04-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU041",
+    "quantity": 103,
+    "min_threshold": 30,
+    "max_threshold": 206,
+    "received_date": "2025-10-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU042",
+    "quantity": 266,
+    "min_threshold": 79,
+    "max_threshold": 532,
+    "received_date": "2025-03-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU043",
+    "quantity": 160,
+    "min_threshold": 48,
+    "max_threshold": 320,
+    "received_date": "2025-06-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU044",
+    "quantity": 5,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2026-02-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU045",
+    "quantity": 268,
+    "min_threshold": 80,
+    "max_threshold": 536,
+    "received_date": "2025-09-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU046",
+    "quantity": 110,
+    "min_threshold": 33,
+    "max_threshold": 220,
+    "received_date": "2026-01-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU047",
+    "quantity": 256,
+    "min_threshold": 76,
+    "max_threshold": 512,
+    "received_date": "2025-08-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU048",
+    "quantity": 183,
+    "min_threshold": 54,
+    "max_threshold": 366,
+    "received_date": "2025-03-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU049",
+    "quantity": 247,
+    "min_threshold": 74,
+    "max_threshold": 494,
+    "received_date": "2025-02-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU050",
+    "quantity": 158,
+    "min_threshold": 47,
+    "max_threshold": 316,
+    "received_date": "2025-06-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU051",
+    "quantity": 184,
+    "min_threshold": 115,
+    "max_threshold": 460,
+    "received_date": "2025-11-02T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU052",
+    "quantity": 226,
+    "min_threshold": 141,
+    "max_threshold": 564,
+    "received_date": "2025-06-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU053",
+    "quantity": 84,
+    "min_threshold": 52,
+    "max_threshold": 208,
+    "received_date": "2025-10-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU054",
+    "quantity": 225,
+    "min_threshold": 140,
+    "max_threshold": 560,
+    "received_date": "2025-04-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU055",
+    "quantity": 213,
+    "min_threshold": 133,
+    "max_threshold": 532,
+    "received_date": "2025-04-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU056",
+    "quantity": 5,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-09-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU057",
+    "quantity": 41,
+    "min_threshold": 25,
+    "max_threshold": 100,
+    "received_date": "2025-03-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU058",
+    "quantity": 232,
+    "min_threshold": 145,
+    "max_threshold": 580,
+    "received_date": "2025-09-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU059",
+    "quantity": 4,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-02-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU060",
+    "quantity": 55,
+    "min_threshold": 34,
+    "max_threshold": 136,
+    "received_date": "2025-04-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU061",
+    "quantity": 284,
+    "min_threshold": 106,
+    "max_threshold": 568,
+    "received_date": "2025-09-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU062",
+    "quantity": 147,
+    "min_threshold": 55,
+    "max_threshold": 294,
+    "received_date": "2025-04-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU063",
+    "quantity": 210,
+    "min_threshold": 78,
+    "max_threshold": 420,
+    "received_date": "2025-10-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU064",
+    "quantity": 127,
+    "min_threshold": 47,
+    "max_threshold": 254,
+    "received_date": "2025-03-31T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU065",
+    "quantity": 158,
+    "min_threshold": 59,
+    "max_threshold": 316,
+    "received_date": "2024-12-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU066",
+    "quantity": 79,
+    "min_threshold": 29,
+    "max_threshold": 158,
+    "received_date": "2025-03-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU067",
+    "quantity": 50,
+    "min_threshold": 18,
+    "max_threshold": 100,
+    "received_date": "2025-09-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU068",
+    "quantity": 255,
+    "min_threshold": 95,
+    "max_threshold": 510,
+    "received_date": "2026-01-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU069",
+    "quantity": 5,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-12-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU070",
+    "quantity": 76,
+    "min_threshold": 28,
+    "max_threshold": 152,
+    "received_date": "2025-09-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU071",
+    "quantity": 197,
+    "min_threshold": 64,
+    "max_threshold": 394,
+    "received_date": "2025-07-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU072",
+    "quantity": 119,
+    "min_threshold": 38,
+    "max_threshold": 238,
+    "received_date": "2025-11-01T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU073",
+    "quantity": 97,
+    "min_threshold": 31,
+    "max_threshold": 194,
+    "received_date": "2025-05-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU074",
+    "quantity": 217,
+    "min_threshold": 70,
+    "max_threshold": 434,
+    "received_date": "2025-05-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU075",
+    "quantity": 286,
+    "min_threshold": 92,
+    "max_threshold": 572,
+    "received_date": "2025-09-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU076",
+    "quantity": 114,
+    "min_threshold": 37,
+    "max_threshold": 228,
+    "received_date": "2025-10-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU077",
+    "quantity": 276,
+    "min_threshold": 89,
+    "max_threshold": 552,
+    "received_date": "2025-09-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU078",
+    "quantity": 203,
+    "min_threshold": 65,
+    "max_threshold": 406,
+    "received_date": "2025-06-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU079",
+    "quantity": 269,
+    "min_threshold": 87,
+    "max_threshold": 538,
+    "received_date": "2026-01-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU080",
+    "quantity": 102,
+    "min_threshold": 33,
+    "max_threshold": 204,
+    "received_date": "2025-10-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU081",
+    "quantity": 233,
+    "min_threshold": 116,
+    "max_threshold": 466,
+    "received_date": "2024-08-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU082",
+    "quantity": 217,
+    "min_threshold": 108,
+    "max_threshold": 434,
+    "received_date": "2024-12-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU083",
+    "quantity": 0,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-09-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU084",
+    "quantity": 93,
+    "min_threshold": 46,
+    "max_threshold": 186,
+    "received_date": "2025-06-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU085",
+    "quantity": 218,
+    "min_threshold": 109,
+    "max_threshold": 436,
+    "received_date": "2025-03-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU086",
+    "quantity": 164,
+    "min_threshold": 82,
+    "max_threshold": 328,
+    "received_date": "2025-04-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU087",
+    "quantity": 225,
+    "min_threshold": 112,
+    "max_threshold": 450,
+    "received_date": "2025-03-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU088",
+    "quantity": 0,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-03-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU089",
+    "quantity": 149,
+    "min_threshold": 74,
+    "max_threshold": 298,
+    "received_date": "2025-06-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU090",
+    "quantity": 42,
+    "min_threshold": 21,
+    "max_threshold": 84,
+    "received_date": "2025-03-31T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU091",
+    "quantity": 197,
+    "min_threshold": 49,
+    "max_threshold": 394,
+    "received_date": "2025-04-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU092",
+    "quantity": 143,
+    "min_threshold": 35,
+    "max_threshold": 286,
+    "received_date": "2025-03-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU093",
+    "quantity": 5,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2023-09-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU094",
+    "quantity": 184,
+    "min_threshold": 46,
+    "max_threshold": 368,
+    "received_date": "2025-03-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU095",
+    "quantity": 239,
+    "min_threshold": 59,
+    "max_threshold": 478,
+    "received_date": "2025-12-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU096",
+    "quantity": 101,
+    "min_threshold": 25,
+    "max_threshold": 202,
+    "received_date": "2026-01-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU097",
+    "quantity": 2,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-06-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU098",
+    "quantity": 89,
+    "min_threshold": 22,
+    "max_threshold": 178,
+    "received_date": "2023-12-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU099",
+    "quantity": 4,
+    "min_threshold": 5,
+    "max_threshold": 20,
+    "received_date": "2025-12-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "sku": "SKU100",
+    "quantity": 228,
+    "min_threshold": 57,
+    "max_threshold": 456,
+    "received_date": "2025-06-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU001",
+    "quantity": 350,
+    "min_threshold": 131,
+    "max_threshold": 700,
+    "received_date": "2025-03-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU002",
+    "quantity": 390,
+    "min_threshold": 146,
+    "max_threshold": 780,
+    "received_date": "2025-04-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU003",
+    "quantity": 174,
+    "min_threshold": 65,
+    "max_threshold": 348,
+    "received_date": "2025-07-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU004",
+    "quantity": 128,
+    "min_threshold": 48,
+    "max_threshold": 256,
+    "received_date": "2025-06-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU005",
+    "quantity": 380,
+    "min_threshold": 142,
+    "max_threshold": 760,
+    "received_date": "2025-09-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU006",
+    "quantity": 73,
+    "min_threshold": 27,
+    "max_threshold": 146,
+    "received_date": "2025-02-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU007",
+    "quantity": 350,
+    "min_threshold": 131,
+    "max_threshold": 700,
+    "received_date": "2025-10-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU008",
+    "quantity": 411,
+    "min_threshold": 154,
+    "max_threshold": 822,
+    "received_date": "2025-06-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU009",
+    "quantity": 240,
+    "min_threshold": 90,
+    "max_threshold": 480,
+    "received_date": "2025-08-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU010",
+    "quantity": 128,
+    "min_threshold": 48,
+    "max_threshold": 256,
+    "received_date": "2025-02-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU011",
+    "quantity": 348,
+    "min_threshold": 174,
+    "max_threshold": 696,
+    "received_date": "2025-05-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU012",
+    "quantity": 340,
+    "min_threshold": 170,
+    "max_threshold": 680,
+    "received_date": "2026-01-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU013",
+    "quantity": 372,
+    "min_threshold": 186,
+    "max_threshold": 744,
+    "received_date": "2025-09-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU014",
+    "quantity": 203,
+    "min_threshold": 101,
+    "max_threshold": 406,
+    "received_date": "2025-12-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU015",
+    "quantity": 419,
+    "min_threshold": 209,
+    "max_threshold": 838,
+    "received_date": "2025-12-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU016",
+    "quantity": 220,
+    "min_threshold": 110,
+    "max_threshold": 440,
+    "received_date": "2025-03-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU017",
+    "quantity": 64,
+    "min_threshold": 32,
+    "max_threshold": 128,
+    "received_date": "2026-01-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU018",
+    "quantity": 320,
+    "min_threshold": 160,
+    "max_threshold": 640,
+    "received_date": "2025-10-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU019",
+    "quantity": 150,
+    "min_threshold": 75,
+    "max_threshold": 300,
+    "received_date": "2025-04-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU020",
+    "quantity": 216,
+    "min_threshold": 108,
+    "max_threshold": 432,
+    "received_date": "2026-01-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU021",
+    "quantity": 217,
+    "min_threshold": 162,
+    "max_threshold": 648,
+    "received_date": "2025-04-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU022",
+    "quantity": 224,
+    "min_threshold": 168,
+    "max_threshold": 672,
+    "received_date": "2025-10-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU023",
+    "quantity": 316,
+    "min_threshold": 237,
+    "max_threshold": 948,
+    "received_date": "2025-11-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU024",
+    "quantity": 49,
+    "min_threshold": 36,
+    "max_threshold": 144,
+    "received_date": "2025-09-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU025",
+    "quantity": 166,
+    "min_threshold": 124,
+    "max_threshold": 496,
+    "received_date": "2025-12-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU026",
+    "quantity": 252,
+    "min_threshold": 189,
+    "max_threshold": 756,
+    "received_date": "2025-11-14T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU027",
+    "quantity": 137,
+    "min_threshold": 102,
+    "max_threshold": 408,
+    "received_date": "2025-03-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU028",
+    "quantity": 68,
+    "min_threshold": 51,
+    "max_threshold": 204,
+    "received_date": "2025-12-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU029",
+    "quantity": 59,
+    "min_threshold": 44,
+    "max_threshold": 176,
+    "received_date": "2025-08-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU030",
+    "quantity": 241,
+    "min_threshold": 180,
+    "max_threshold": 720,
+    "received_date": "2025-04-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU031",
+    "quantity": 312,
+    "min_threshold": 78,
+    "max_threshold": 624,
+    "received_date": "2026-02-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU032",
+    "quantity": 190,
+    "min_threshold": 47,
+    "max_threshold": 380,
+    "received_date": "2025-09-29T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU033",
+    "quantity": 89,
+    "min_threshold": 22,
+    "max_threshold": 178,
+    "received_date": "2025-12-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU034",
+    "quantity": 392,
+    "min_threshold": 98,
+    "max_threshold": 784,
+    "received_date": "2025-05-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU035",
+    "quantity": 140,
+    "min_threshold": 35,
+    "max_threshold": 280,
+    "received_date": "2026-01-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU036",
+    "quantity": 436,
+    "min_threshold": 109,
+    "max_threshold": 872,
+    "received_date": "2025-06-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU037",
+    "quantity": 344,
+    "min_threshold": 86,
+    "max_threshold": 688,
+    "received_date": "2025-05-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU038",
+    "quantity": 136,
+    "min_threshold": 34,
+    "max_threshold": 272,
+    "received_date": "2025-06-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU039",
+    "quantity": 459,
+    "min_threshold": 114,
+    "max_threshold": 918,
+    "received_date": "2025-10-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU040",
+    "quantity": 83,
+    "min_threshold": 20,
+    "max_threshold": 166,
+    "received_date": "2025-03-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU041",
+    "quantity": 473,
+    "min_threshold": 141,
+    "max_threshold": 946,
+    "received_date": "2025-09-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU042",
+    "quantity": 422,
+    "min_threshold": 126,
+    "max_threshold": 844,
+    "received_date": "2025-03-19T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU043",
+    "quantity": 72,
+    "min_threshold": 21,
+    "max_threshold": 144,
+    "received_date": "2026-01-11T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU044",
+    "quantity": 440,
+    "min_threshold": 132,
+    "max_threshold": 880,
+    "received_date": "2025-07-21T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU045",
+    "quantity": 396,
+    "min_threshold": 118,
+    "max_threshold": 792,
+    "received_date": "2025-02-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU046",
+    "quantity": 136,
+    "min_threshold": 40,
+    "max_threshold": 272,
+    "received_date": "2025-06-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU047",
+    "quantity": 411,
+    "min_threshold": 123,
+    "max_threshold": 822,
+    "received_date": "2026-01-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU048",
+    "quantity": 113,
+    "min_threshold": 33,
+    "max_threshold": 226,
+    "received_date": "2025-08-31T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU049",
+    "quantity": 168,
+    "min_threshold": 50,
+    "max_threshold": 336,
+    "received_date": "2026-01-09T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU050",
+    "quantity": 150,
+    "min_threshold": 45,
+    "max_threshold": 300,
+    "received_date": "2025-09-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU051",
+    "quantity": 313,
+    "min_threshold": 195,
+    "max_threshold": 780,
+    "received_date": "2025-07-31T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU052",
+    "quantity": 288,
+    "min_threshold": 180,
+    "max_threshold": 720,
+    "received_date": "2025-06-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU053",
+    "quantity": 460,
+    "min_threshold": 287,
+    "max_threshold": 1148,
+    "received_date": "2025-04-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU054",
+    "quantity": 400,
+    "min_threshold": 250,
+    "max_threshold": 1000,
+    "received_date": "2025-12-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU055",
+    "quantity": 140,
+    "min_threshold": 87,
+    "max_threshold": 348,
+    "received_date": "2025-03-13T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU056",
+    "quantity": 224,
+    "min_threshold": 140,
+    "max_threshold": 560,
+    "received_date": "2025-07-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU057",
+    "quantity": 417,
+    "min_threshold": 260,
+    "max_threshold": 1040,
+    "received_date": "2025-10-18T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU058",
+    "quantity": 385,
+    "min_threshold": 240,
+    "max_threshold": 960,
+    "received_date": "2025-08-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU059",
+    "quantity": 419,
+    "min_threshold": 261,
+    "max_threshold": 1044,
+    "received_date": "2025-07-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU060",
+    "quantity": 387,
+    "min_threshold": 241,
+    "max_threshold": 964,
+    "received_date": "2025-12-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU061",
+    "quantity": 304,
+    "min_threshold": 114,
+    "max_threshold": 608,
+    "received_date": "2025-07-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU062",
+    "quantity": 304,
+    "min_threshold": 114,
+    "max_threshold": 608,
+    "received_date": "2025-03-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU063",
+    "quantity": 256,
+    "min_threshold": 96,
+    "max_threshold": 512,
+    "received_date": "2025-08-04T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU064",
+    "quantity": 172,
+    "min_threshold": 64,
+    "max_threshold": 344,
+    "received_date": "2025-02-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU065",
+    "quantity": 435,
+    "min_threshold": 163,
+    "max_threshold": 870,
+    "received_date": "2026-01-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU066",
+    "quantity": 121,
+    "min_threshold": 45,
+    "max_threshold": 242,
+    "received_date": "2025-12-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU067",
+    "quantity": 123,
+    "min_threshold": 46,
+    "max_threshold": 246,
+    "received_date": "2025-07-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU068",
+    "quantity": 126,
+    "min_threshold": 47,
+    "max_threshold": 252,
+    "received_date": "2025-08-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU069",
+    "quantity": 153,
+    "min_threshold": 57,
+    "max_threshold": 306,
+    "received_date": "2025-05-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU070",
+    "quantity": 96,
+    "min_threshold": 36,
+    "max_threshold": 192,
+    "received_date": "2025-04-17T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU071",
+    "quantity": 316,
+    "min_threshold": 102,
+    "max_threshold": 632,
+    "received_date": "2025-03-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU072",
+    "quantity": 147,
+    "min_threshold": 47,
+    "max_threshold": 294,
+    "received_date": "2025-07-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU073",
+    "quantity": 337,
+    "min_threshold": 109,
+    "max_threshold": 674,
+    "received_date": "2025-03-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU074",
+    "quantity": 393,
+    "min_threshold": 127,
+    "max_threshold": 786,
+    "received_date": "2026-01-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU075",
+    "quantity": 283,
+    "min_threshold": 91,
+    "max_threshold": 566,
+    "received_date": "2025-04-10T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU076",
+    "quantity": 302,
+    "min_threshold": 98,
+    "max_threshold": 604,
+    "received_date": "2025-08-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU077",
+    "quantity": 132,
+    "min_threshold": 42,
+    "max_threshold": 264,
+    "received_date": "2025-04-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU078",
+    "quantity": 462,
+    "min_threshold": 150,
+    "max_threshold": 924,
+    "received_date": "2025-10-26T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU079",
+    "quantity": 174,
+    "min_threshold": 56,
+    "max_threshold": 348,
+    "received_date": "2025-03-12T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU080",
+    "quantity": 441,
+    "min_threshold": 143,
+    "max_threshold": 882,
+    "received_date": "2025-10-20T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU081",
+    "quantity": 136,
+    "min_threshold": 68,
+    "max_threshold": 272,
+    "received_date": "2025-08-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU082",
+    "quantity": 348,
+    "min_threshold": 174,
+    "max_threshold": 696,
+    "received_date": "2025-12-15T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU083",
+    "quantity": 275,
+    "min_threshold": 137,
+    "max_threshold": 550,
+    "received_date": "2025-04-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU084",
+    "quantity": 232,
+    "min_threshold": 116,
+    "max_threshold": 464,
+    "received_date": "2025-07-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU085",
+    "quantity": 68,
+    "min_threshold": 34,
+    "max_threshold": 136,
+    "received_date": "2025-04-06T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU086",
+    "quantity": 265,
+    "min_threshold": 132,
+    "max_threshold": 530,
+    "received_date": "2026-01-28T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU087",
+    "quantity": 195,
+    "min_threshold": 97,
+    "max_threshold": 390,
+    "received_date": "2025-09-25T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU088",
+    "quantity": 300,
+    "min_threshold": 150,
+    "max_threshold": 600,
+    "received_date": "2025-08-22T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU089",
+    "quantity": 334,
+    "min_threshold": 167,
+    "max_threshold": 668,
+    "received_date": "2026-02-08T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU090",
+    "quantity": 195,
+    "min_threshold": 97,
+    "max_threshold": 390,
+    "received_date": "2025-11-30T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU091",
+    "quantity": 376,
+    "min_threshold": 94,
+    "max_threshold": 752,
+    "received_date": "2026-01-07T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU092",
+    "quantity": 163,
+    "min_threshold": 40,
+    "max_threshold": 326,
+    "received_date": "2025-03-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU093",
+    "quantity": 72,
+    "min_threshold": 18,
+    "max_threshold": 144,
+    "received_date": "2025-12-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU094",
+    "quantity": 224,
+    "min_threshold": 56,
+    "max_threshold": 448,
+    "received_date": "2025-08-03T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU095",
+    "quantity": 390,
+    "min_threshold": 97,
+    "max_threshold": 780,
+    "received_date": "2025-06-24T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU096",
+    "quantity": 326,
+    "min_threshold": 81,
+    "max_threshold": 652,
+    "received_date": "2025-11-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU097",
+    "quantity": 350,
+    "min_threshold": 87,
+    "max_threshold": 700,
+    "received_date": "2025-09-05T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU098",
+    "quantity": 313,
+    "min_threshold": 78,
+    "max_threshold": 626,
+    "received_date": "2025-04-27T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU099",
+    "quantity": 116,
+    "min_threshold": 29,
+    "max_threshold": 232,
+    "received_date": "2026-01-16T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "sku": "SKU100",
+    "quantity": 174,
+    "min_threshold": 43,
+    "max_threshold": 348,
+    "received_date": "2025-11-23T00:00:00Z",
+    "last_updated": "2026-02-12T11:55:17.440849Z"
+  }
+]

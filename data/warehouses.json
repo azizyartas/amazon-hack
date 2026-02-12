@@ -1,0 +1,56 @@
+[
+  {
+    "warehouse_id": "WH001",
+    "name": "İstanbul Merkez Depo",
+    "location": "İstanbul, Türkiye",
+    "region": "Marmara",
+    "capacity": 12000,
+    "is_trade_hub": true,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "warehouse_id": "WH002",
+    "name": "Ankara Depo",
+    "location": "Ankara, Türkiye",
+    "region": "İç Anadolu",
+    "capacity": 8000,
+    "is_trade_hub": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "warehouse_id": "WH003",
+    "name": "İzmir Depo",
+    "location": "İzmir, Türkiye",
+    "region": "Ege",
+    "capacity": 7000,
+    "is_trade_hub": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "warehouse_id": "WH004",
+    "name": "Antalya Depo",
+    "location": "Antalya, Türkiye",
+    "region": "Akdeniz",
+    "capacity": 5000,
+    "is_trade_hub": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "warehouse_id": "WH005",
+    "name": "Bursa Depo",
+    "location": "Bursa, Türkiye",
+    "region": "Marmara",
+    "capacity": 6000,
+    "is_trade_hub": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "warehouse_id": "WH006",
+    "name": "Samsun Depo",
+    "location": "Samsun, Türkiye",
+    "region": "Karadeniz",
+    "capacity": 10000,
+    "is_trade_hub": true,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+]
