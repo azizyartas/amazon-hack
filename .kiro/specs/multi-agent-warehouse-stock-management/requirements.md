@@ -118,7 +118,7 @@
 
 #### Kabul Kriterleri
 
-1. THE Sistem SHALL başlangıçta 5 farklı Depo lokasyonu için veri üretmeli
+1. THE Sistem SHALL başlangıçta 6 farklı Depo lokasyonu için veri üretmeli
 2. THE Sistem SHALL 10 farklı ürün kategorisi için başlangıç verisi oluşturmalı
 3. THE Sistem SHALL 100 farklı SKU için stok, fiyat ve kategori bilgisi üretmeli
 4. THE Sistem SHALL her SKU için 12 aylık geçmiş satış verisi simüle etmeli
