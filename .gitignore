@@ -1,0 +1,11 @@
+# Credentials
+creds.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE
+.vscode/
