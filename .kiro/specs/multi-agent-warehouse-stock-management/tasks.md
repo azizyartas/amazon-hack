@@ -115,26 +115,26 @@
 
 ### Faz 5: Test ve Doğrulama (Hafta 9-10)
 
-- [ ] 12. Property-Based Testler (Geliştirici 3)
-  - [ ] 12.1 Hypothesis test framework'ünü kur
-  - [ ] 12.2 Özellik 1-10 için property testleri yaz (stok yönetimi özellikleri)
-  - [ ] 12.3 Özellik 11-20 için property testleri yaz (agent koordinasyon özellikleri)
-  - [ ] 12.4 Özellik 21-32 için property testleri yaz (sistem özellikleri)
-  - [ ] 12.5 Test stratejilerini optimize et (warehouse, SKU, transfer stratejileri)
+- [ ]* 12. Property-Based Testler (Geliştirici 3) *(OPTIONAL - MVP sonrası)*
+  - [ ]* 12.1 Hypothesis test framework'ünü kur
+  - [ ]* 12.2 Özellik 1-10 için property testleri yaz (stok yönetimi özellikleri)
+  - [ ]* 12.3 Özellik 11-20 için property testleri yaz (agent koordinasyon özellikleri)
+  - [ ]* 12.4 Özellik 21-32 için property testleri yaz (sistem özellikleri)
+  - [ ]* 12.5 Test stratejilerini optimize et (warehouse, SKU, transfer stratejileri)
 
-- [ ] 13. Unit Testler (Geliştirici 3)
-  - [ ] 13.1 Inventory Monitor Agent unit testleri yaz (minimum 20 test)
-  - [ ] 13.2 Sales Predictor Agent unit testleri yaz (minimum 20 test)
-  - [ ] 13.3 Stock Aging Analyzer Agent unit testleri yaz (minimum 20 test)
-  - [ ] 13.4 Transfer Coordinator Agent unit testleri yaz (minimum 20 test)
-  - [ ] 13.5 Edge case testleri yaz (sıfır stok, eşzamanlı transferler, vb.)
+- [ ]* 13. Unit Testler (Geliştirici 3) *(OPTIONAL - MVP sonrası)*
+  - [ ]* 13.1 Inventory Monitor Agent unit testleri yaz (minimum 20 test)
+  - [ ]* 13.2 Sales Predictor Agent unit testleri yaz (minimum 20 test)
+  - [ ]* 13.3 Stock Aging Analyzer Agent unit testleri yaz (minimum 20 test)
+  - [ ]* 13.4 Transfer Coordinator Agent unit testleri yaz (minimum 20 test)
+  - [ ]* 13.5 Edge case testleri yaz (sıfır stok, eşzamanlı transferler, vb.)
 
-- [ ] 14. Entegrasyon ve Simülasyon Testleri (Geliştirici 3)
-  - [ ] 14.1 Agent arası iletişim entegrasyon testleri yaz
-  - [ ] 14.2 End-to-end transfer senaryosu testleri yaz
-  - [ ] 14.3 30 günlük tam simülasyon testi yaz (6 depo, 100 SKU)
-  - [ ] 14.4 Yüksek yük simülasyon testi yaz (1000+ eşzamanlı işlem)
-  - [ ] 14.5 Hata senaryosu testleri yaz (Bedrock timeout, DynamoDB throttling)
+- [ ]* 14. Entegrasyon ve Simülasyon Testleri (Geliştirici 3) *(OPTIONAL - MVP sonrası)*
+  - [ ]* 14.1 Agent arası iletişim entegrasyon testleri yaz
+  - [ ]* 14.2 End-to-end transfer senaryosu testleri yaz
+  - [ ]* 14.3 30 günlük tam simülasyon testi yaz (6 depo, 100 SKU)
+  - [ ]* 14.4 Yüksek yük simülasyon testi yaz (1000+ eşzamanlı işlem)
+  - [ ]* 14.5 Hata senaryosu testleri yaz (Bedrock timeout, DynamoDB throttling)
 
 ### Faz 6: Görselleştirme ve İzleme (Hafta 11)
 
@@ -166,11 +166,11 @@
   - [ ] 18.4 Kullanıcı kılavuzu yaz
   - [ ] 18.5 Troubleshooting guide yaz
 
-- [ ] 19. CI/CD Pipeline (Geliştirici 3)
-  - [ ] 19.1 GitHub Actions workflow'larını kur
-  - [ ] 19.2 Otomatik test çalıştırma pipeline'ı oluştur
-  - [ ] 19.3 Code coverage raporlama ekle
-  - [ ] 19.4 Otomatik deployment pipeline'ı kur (dev, staging, prod)
+- [ ]* 19. CI/CD Pipeline (Geliştirici 3) *(OPTIONAL - MVP sonrası)*
+  - [ ]* 19.1 GitHub Actions workflow'larını kur
+  - [ ]* 19.2 Otomatik test çalıştırma pipeline'ı oluştur
+  - [ ]* 19.3 Code coverage raporlama ekle
+  - [ ]* 19.4 Otomatik deployment pipeline'ı kur (dev, staging, prod)
 
 ### Faz 8: Demo ve Teslim (Hafta 13)
 
@@ -276,10 +276,10 @@ graph TD
 
 ## Teslim Kriterleri
 
-- [ ] Tüm 21 görev tamamlanmış
-- [ ] Tüm 32 özellik için property testler yazılmış ve geçiyor
-- [ ] Minimum %80 kod kapsamı
+- [ ] Tüm MVP görevleri tamamlanmış (test ve CI/CD optional)
 - [ ] Tüm agentlar AWS Bedrock üzerinde çalışıyor
+- [ ] Agent'lar arası iletişim ve koordinasyon çalışıyor
+- [ ] Transfer kararları doğru şekilde veriliyor
 - [ ] QuickSight dashboard'ları aktif
 - [ ] Dokümantasyon tamamlanmış
 - [ ] AWS AI Agent Qualification kriterleri karşılanmış

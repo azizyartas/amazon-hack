@@ -143,13 +143,11 @@ def create_tables(region: str = REGION):
                 raise
 
 
-def load_data_to_table(table_name: str, data: list, region: str = REGION):
-    """JSON verisini DynamoDB tablosuna yükler (batch write)."""
-    dynamodb = boto3.resource("dynamodb", region_name=region, verify=False)
-    table = dynamodb.Table(table_name)
-
-    # DynamoDB float desteklemez, Decimal'e çevir
+def load_data_to_table(table_name: str, data: list, region: str = REGION, threads: int = 10):
+    """JSON verisini DynamoDB tablosuna yükler (paralel batch write)."""
     from decimal import Decimal
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    import threading
 
     def convert_floats(obj):
         if isinstance(obj, float):
@@ -161,36 +159,74 @@ def load_data_to_table(table_name: str, data: list, region: str = REGION):
         return obj
 
     data = convert_floats(data)
+    total = len(data)
+    counter = {"done": 0}
+    lock = threading.Lock()
 
-    with table.batch_writer() as batch:
-        for i, item in enumerate(data):
-            batch.put_item(Item=item)
-            if (i + 1) % 1000 == 0:
-                print(f"    ... {i + 1}/{len(data)} yüklendi")
+    def upload_chunk(chunk):
+        """Bir chunk'ı batch write ile yükler."""
+        dynamodb = boto3.resource("dynamodb", region_name=region, verify=False)
+        table = dynamodb.Table(table_name)
+        with table.batch_writer() as batch:
+            for item in chunk:
+                batch.put_item(Item=item)
+        with lock:
+            counter["done"] += len(chunk)
+            done = counter["done"]
+        if done % 10000 < len(chunk):
+            print(f"    ... {done}/{total} yüklendi")
 
-    print(f"  ✓  {table_name}: {len(data)} kayıt yüklendi")
+    # 10K'lık chunk'lara böl
+    chunk_size = 10000
+    chunks = [data[i:i + chunk_size] for i in range(0, total, chunk_size)]
+
+    with ThreadPoolExecutor(max_workers=threads) as executor:
+        futures = [executor.submit(upload_chunk, chunk) for chunk in chunks]
+        for future in as_completed(futures):
+            future.result()  # hata varsa raise eder
+
+    print(f"  ✓  {table_name}: {total} kayıt yüklendi ({threads} thread)")
+
+
+def _table_has_data(table_name: str, region: str = REGION) -> bool:
+    """Tabloda veri var mı kontrol eder (hızlı scan, 1 item)."""
+    dynamodb = boto3.client("dynamodb", region_name=region, verify=False)
+    resp = dynamodb.scan(TableName=table_name, Limit=1, Select="COUNT")
+    return resp.get("Count", 0) > 0
 
 
 def load_all_data(data_dir: str = "data_layer/data", region: str = REGION):
-    """Tüm JSON verilerini DynamoDB'ye yükler."""
+    """Tüm JSON verilerini DynamoDB'ye yükler (zaten yüklüyse atlar)."""
     print("\n📤 DynamoDB'ye veri yükleniyor...\n")
 
     # Warehouses
-    with open(f"{data_dir}/warehouses.json", "r", encoding="utf-8") as f:
-        load_data_to_table("Warehouses", json.load(f), region)
+    if _table_has_data("Warehouses", region):
+        print("  ⏭️  Warehouses zaten dolu, atlanıyor")
+    else:
+        with open(f"{data_dir}/warehouses.json", "r", encoding="utf-8") as f:
+            load_data_to_table("Warehouses", json.load(f), region)
 
     # Products
-    with open(f"{data_dir}/products.json", "r", encoding="utf-8") as f:
-        load_data_to_table("Products", json.load(f), region)
+    if _table_has_data("Products", region):
+        print("  ⏭️  Products zaten dolu, atlanıyor")
+    else:
+        with open(f"{data_dir}/products.json", "r", encoding="utf-8") as f:
+            load_data_to_table("Products", json.load(f), region)
 
     # Inventory
-    with open(f"{data_dir}/initial-inventory.json", "r", encoding="utf-8") as f:
-        load_data_to_table("Inventory", json.load(f), region)
+    if _table_has_data("Inventory", region):
+        print("  ⏭️  Inventory zaten dolu, atlanıyor")
+    else:
+        with open(f"{data_dir}/initial-inventory.json", "r", encoding="utf-8") as f:
+            load_data_to_table("Inventory", json.load(f), region)
 
-    # SalesHistory (büyük veri - progress göster)
-    print("  ⏳ SalesHistory yükleniyor (196K+ kayıt, biraz sürebilir)...")
-    with open(f"{data_dir}/sales-history.json", "r", encoding="utf-8") as f:
-        load_data_to_table("SalesHistory", json.load(f), region)
+    # SalesHistory (büyük veri)
+    if _table_has_data("SalesHistory", region):
+        print("  ⏭️  SalesHistory zaten dolu, atlanıyor")
+    else:
+        print("  ⏳ SalesHistory yükleniyor (196K+ kayıt, paralel yükleme)...")
+        with open(f"{data_dir}/sales-history.json", "r", encoding="utf-8") as f:
+            load_data_to_table("SalesHistory", json.load(f), region)
 
     print("\n✅ Tüm veriler DynamoDB'ye yüklendi!")
 

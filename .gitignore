@@ -3,9 +3,27 @@ creds.txt
 
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
 .pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
 
 # IDE
 .vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
