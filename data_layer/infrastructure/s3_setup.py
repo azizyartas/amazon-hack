@@ -12,21 +12,24 @@ import json
 import os
 from botocore.exceptions import ClientError
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-REGION = "us-east-1"
+
+REGION = "us-west-2"
 BUCKET_PREFIX = "warehouse-stock-mgmt"
 
 
 def get_bucket_name(region: str = REGION) -> str:
     """Account ID ile unique bucket adı oluşturur."""
-    sts = boto3.client("sts", region_name=region)
+    sts = boto3.client("sts", region_name=region, verify=False)
     account_id = sts.get_caller_identity()["Account"]
     return f"{BUCKET_PREFIX}-{account_id}"
 
 
 def create_bucket(region: str = REGION) -> str:
     """S3 bucket oluşturur."""
-    s3 = boto3.client("s3", region_name=region)
+    s3 = boto3.client("s3", region_name=region, verify=False)
     bucket_name = get_bucket_name(region)
 
     try:
@@ -49,7 +52,7 @@ def create_bucket(region: str = REGION) -> str:
 
 def upload_file(bucket_name: str, local_path: str, s3_key: str, region: str = REGION):
     """Tek dosya yükler."""
-    s3 = boto3.client("s3", region_name=region)
+    s3 = boto3.client("s3", region_name=region, verify=False)
     s3.upload_file(local_path, bucket_name, s3_key)
     print(f"  ✓ {s3_key}")
 
@@ -77,7 +80,7 @@ def upload_all_data(data_dir: str = "data_layer/data", region: str = REGION):
             print(f"  ⚠️  {local_path} bulunamadı, atlanıyor")
 
     # Boş prefix'ler oluştur (klasör yapısı)
-    s3 = boto3.client("s3", region_name=region)
+    s3 = boto3.client("s3", region_name=region, verify=False)
     for prefix in ["agent-logs/", "reports/daily/", "reports/weekly/", "reports/monthly/"]:
         s3.put_object(Bucket=bucket_name, Key=prefix, Body=b"")
         print(f"  ✓ {prefix} (klasör)")
@@ -88,7 +91,7 @@ def upload_all_data(data_dir: str = "data_layer/data", region: str = REGION):
 
 def delete_bucket(region: str = REGION):
     """Bucket ve içeriğini siler (dikkatli kullan)."""
-    s3 = boto3.resource("s3", region_name=region)
+    s3 = boto3.resource("s3", region_name=region, verify=False)
     bucket_name = get_bucket_name(region)
     try:
         bucket = s3.Bucket(bucket_name)

@@ -16,7 +16,7 @@ from data_layer.infrastructure.s3_setup import create_bucket, upload_all_data, d
 
 
 def main():
-    region = "us-east-1"
+    region = "us-west-2"
     delete_mode = False
 
     # Argümanları parse et

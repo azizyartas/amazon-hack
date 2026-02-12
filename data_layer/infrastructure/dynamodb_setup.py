@@ -5,10 +5,20 @@
 import boto3
 import json
 import time
+import os
 from botocore.exceptions import ClientError
+from botocore.config import Config
+
+# SSL verify sorunları için (kurumsal proxy/VPN)
+os.environ["AWS_CA_BUNDLE"] = ""
+os.environ["CURL_CA_BUNDLE"] = ""
+
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
-REGION = "us-east-1"  # Bedrock'un aktif olduğu region
+REGION = "us-west-2"  # Bedrock'un aktif olduğu region
+BOTO_CONFIG = Config(retries={"max_attempts": 3})
 
 TABLE_DEFINITIONS = [
     {
@@ -114,7 +124,7 @@ TABLE_DEFINITIONS = [
 
 def create_tables(region: str = REGION):
     """Tüm DynamoDB tablolarını oluşturur."""
-    dynamodb = boto3.client("dynamodb", region_name=region)
+    dynamodb = boto3.client("dynamodb", region_name=region, verify=False)
 
     for table_def in TABLE_DEFINITIONS:
         table_name = table_def["TableName"]
@@ -135,7 +145,7 @@ def create_tables(region: str = REGION):
 
 def load_data_to_table(table_name: str, data: list, region: str = REGION):
     """JSON verisini DynamoDB tablosuna yükler (batch write)."""
-    dynamodb = boto3.resource("dynamodb", region_name=region)
+    dynamodb = boto3.resource("dynamodb", region_name=region, verify=False)
     table = dynamodb.Table(table_name)
 
     # DynamoDB float desteklemez, Decimal'e çevir
@@ -187,7 +197,7 @@ def load_all_data(data_dir: str = "data_layer/data", region: str = REGION):
 
 def delete_tables(region: str = REGION):
     """Tüm tabloları siler (dikkatli kullan)."""
-    dynamodb = boto3.client("dynamodb", region_name=region)
+    dynamodb = boto3.client("dynamodb", region_name=region, verify=False)
     for table_def in TABLE_DEFINITIONS:
         table_name = table_def["TableName"]
         try:
