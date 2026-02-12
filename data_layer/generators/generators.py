@@ -18,7 +18,7 @@ import random
 from datetime import datetime, timedelta
 from typing import List, Dict, Tuple
 
-from src.data.models import Warehouse, Category, Product, InventoryItem, SalesRecord
+from .models import Warehouse, Category, Product, InventoryItem, SalesRecord
 
 
 # --- SABİTLER ---
@@ -575,7 +575,7 @@ def save_csv(data: List[dict], filepath: str):
     print(f"  ✓ {filepath} ({len(data)} kayıt)")
 
 
-def generate_all(output_dir: str = "data", seed: int = 42):
+def generate_all(output_dir: str = "data_layer/data", seed: int = 42):
     """Tüm simülasyon verisini üretir ve kaydeder."""
     random.seed(seed)
     print("🏭 Simülasyon verisi üretiliyor...\n")
