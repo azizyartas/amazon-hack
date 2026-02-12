@@ -9,9 +9,8 @@ Kullanim:
 import sys
 import os
 import json
-
-os.environ["AWS_CA_BUNDLE"] = ""
-os.environ["CURL_CA_BUNDLE"] = ""
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
+import env_loader
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 

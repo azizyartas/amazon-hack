@@ -1,0 +1,85 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BedrockModelInvoke",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:us-west-2::foundation-model/us.amazon.nova-pro-v1:0",
+        "arn:aws:bedrock:us-west-2::foundation-model/us.amazon.nova-lite-v1:0",
+        "arn:aws:bedrock:*:*:inference-profile/us.amazon.nova-pro-v1:0",
+        "arn:aws:bedrock:*:*:inference-profile/us.amazon.nova-lite-v1:0"
+      ]
+    },
+    {
+      "Sid": "DynamoDBReadWrite",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem"
+      ],
+      "Resource": [
+        "arn:aws:dynamodb:us-west-2:*:table/Warehouses",
+        "arn:aws:dynamodb:us-west-2:*:table/Products",
+        "arn:aws:dynamodb:us-west-2:*:table/Products/index/CategoryIndex",
+        "arn:aws:dynamodb:us-west-2:*:table/Inventory",
+        "arn:aws:dynamodb:us-west-2:*:table/SalesHistory",
+        "arn:aws:dynamodb:us-west-2:*:table/Transfers",
+        "arn:aws:dynamodb:us-west-2:*:table/Transfers/index/StatusTimeIndex",
+        "arn:aws:dynamodb:us-west-2:*:table/AgentDecisions",
+        "arn:aws:dynamodb:us-west-2:*:table/AgentDecisions/index/AgentTimeIndex"
+      ]
+    },
+    {
+      "Sid": "DynamoDBTransactions",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:TransactWriteItems",
+        "dynamodb:TransactGetItems"
+      ],
+      "Resource": [
+        "arn:aws:dynamodb:us-west-2:*:table/Inventory",
+        "arn:aws:dynamodb:us-west-2:*:table/Transfers"
+      ]
+    },
+    {
+      "Sid": "S3AgentLogs",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::warehouse-stock-mgmt-*",
+        "arn:aws:s3:::warehouse-stock-mgmt-*/*"
+      ]
+    },
+    {
+      "Sid": "STSGetCallerIdentity",
+      "Effect": "Allow",
+      "Action": "sts:GetCallerIdentity",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:us-west-2:*:*"
+    }
+  ]
+}

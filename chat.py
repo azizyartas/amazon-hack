@@ -1,20 +1,29 @@
 """
-Agentlarla interaktif sohbet arayüzü.
+Agentlarla interaktif sohbet arayuzu - MCP Server entegrasyonlu.
 
-Kullanım:
-    export AWS_DEFAULT_REGION="us-west-2"
-    export AWS_ACCESS_KEY_ID="..."
-    export AWS_SECRET_ACCESS_KEY="..."
-    export AWS_SESSION_TOKEN="..."
+MCP Server'lar subprocess olarak baslatilir, agent islemleri MCP uzerinden yapilir.
+Kullanim:
     python chat.py
 """
 
 import json
 import os
 import sys
-from unittest.mock import MagicMock
+import re
+import asyncio
+import logging
+from collections import defaultdict
+from decimal import Decimal
+from contextlib import AsyncExitStack
+
+import env_loader
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 import boto3
+from boto3.dynamodb.conditions import Key
+from mcp.client.stdio import stdio_client, StdioServerParameters
+from mcp.client.session import ClientSession
 
 from src.agents.inventory_monitor import InventoryMonitorAgent
 from src.agents.sales_predictor import SalesPredictorAgent
@@ -25,71 +34,243 @@ from src.models.warehouse import ApprovalConfig, OperationMode
 
 REGION = os.environ.get("AWS_DEFAULT_REGION", "us-west-2")
 
+# Logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(name)s] %(levelname)s: %(message)s")
+logger = logging.getLogger("chat")
+# MCP log'larini biraz kisalim
+logging.getLogger("mcp").setLevel(logging.WARNING)
 
-def setup_agents():
-    """Tüm agentları gerçek Bedrock + simülasyon verisiyle başlatır."""
-    bedrock = boto3.client("bedrock-runtime", region_name=REGION)
-    mock_db = MagicMock()
-    mock_s3 = MagicMock()
 
-    monitor = InventoryMonitorAgent(region_name=REGION, bedrock_runtime_client=bedrock, dynamodb_resource=mock_db, s3_client=mock_s3)
-    predictor = SalesPredictorAgent(region_name=REGION, bedrock_runtime_client=bedrock, dynamodb_resource=mock_db, s3_client=mock_s3)
-    aging = StockAgingAnalyzerAgent(region_name=REGION, bedrock_runtime_client=bedrock, dynamodb_resource=mock_db, s3_client=mock_s3)
-    coordinator = TransferCoordinatorAgent(region_name=REGION, bedrock_runtime_client=bedrock, dynamodb_resource=mock_db, s3_client=mock_s3)
+def _decimal_to_native(obj):
+    if isinstance(obj, Decimal):
+        return int(obj) if obj == int(obj) else float(obj)
+    if isinstance(obj, dict):
+        return {k: _decimal_to_native(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_decimal_to_native(i) for i in obj]
+    return obj
+
+
+# ============================================================
+# MCP Client Manager - 3 MCP server'i yonetir
+# ============================================================
+
+class MCPManager:
+    """3 custom MCP server'i subprocess olarak baslatir ve tool call yapar."""
+
+    def __init__(self):
+        self._sessions: dict[str, ClientSession] = {}
+        self._tools: dict[str, dict] = {}  # tool_name -> {server, schema}
+        self._exit_stack = AsyncExitStack()
+
+    async def start(self):
+        """Tum MCP server'lari baslat."""
+        servers = {
+            "warehouse-data": "mcp_servers/warehouse_data_server.py",
+            "analytics": "mcp_servers/analytics_server.py",
+            "transfer-ops": "mcp_servers/transfer_ops_server.py",
+        }
+        for name, script in servers.items():
+            try:
+                params = StdioServerParameters(
+                    command="python",
+                    args=[script],
+                    env={
+                        **os.environ,
+                        "AWS_CA_BUNDLE": "",
+                        "CURL_CA_BUNDLE": "",
+                        "AWS_DEFAULT_REGION": REGION,
+                    },
+                )
+                read, write = await self._exit_stack.enter_async_context(stdio_client(params))
+                session = await self._exit_stack.enter_async_context(ClientSession(read, write))
+                await session.initialize()
+                self._sessions[name] = session
+
+                # Tool'lari kaydet
+                tools_resp = await session.list_tools()
+                for tool in tools_resp.tools:
+                    self._tools[tool.name] = {"server": name, "schema": tool.inputSchema, "description": tool.description}
+
+                logger.info("MCP server baslatildi: %s (%d tool)", name, len(tools_resp.tools))
+            except Exception as e:
+                logger.error("MCP server baslatilamadi [%s]: %s", name, e)
+
+    async def call_tool(self, tool_name: str, arguments: dict) -> dict:
+        """Bir MCP tool'u cagir."""
+        tool_info = self._tools.get(tool_name)
+        if not tool_info:
+            return {"success": False, "error": f"Unknown tool: {tool_name}"}
+
+        session = self._sessions.get(tool_info["server"])
+        if not session:
+            return {"success": False, "error": f"Server not connected: {tool_info['server']}"}
+
+        try:
+            logger.info("MCP call: %s.%s(%s)", tool_info["server"], tool_name, json.dumps(arguments, ensure_ascii=False)[:200])
+            result = await session.call_tool(tool_name, arguments)
+            # Parse text content
+            for content in result.content:
+                if hasattr(content, "text"):
+                    data = json.loads(content.text)
+                    logger.info("MCP result: %s -> %s", tool_name, "OK" if data.get("success", True) else data.get("error", "?"))
+                    return data
+            return {"success": False, "error": "No text content in response"}
+        except Exception as e:
+            logger.error("MCP call error [%s]: %s", tool_name, e)
+            return {"success": False, "error": str(e)}
+
+    def list_tools(self) -> dict:
+        """Tum tool'lari listele."""
+        return self._tools
+
+    async def stop(self):
+        """Tum server'lari kapat."""
+        try:
+            await self._exit_stack.aclose()
+        except (asyncio.CancelledError, Exception) as e:
+            logger.debug("MCP shutdown (beklenen): %s", e)
+
+
+# ============================================================
+# MCP uzerinden veri yukleme (agent'lara veri saglamak icin)
+# ============================================================
+
+async def load_warehouses_mcp(mcp: MCPManager) -> dict:
+    result = await mcp.call_tool("list_warehouses", {})
+    warehouses = {}
+    if result.get("success"):
+        for item in result["data"]:
+            wid = item["warehouse_id"]
+            warehouses[wid] = {
+                "name": item.get("name", wid),
+                "region": item.get("region", ""),
+                "capacity": item.get("capacity", 0),
+                "is_trade_hub": item.get("is_trade_hub", False),
+            }
+    print(f"  {len(warehouses)} depo yuklendi (MCP)")
+    return warehouses
+
+
+async def load_products_mcp(mcp: MCPManager) -> tuple:
+    """Products - kategori bazli MCP call."""
+    categories_list = ["Elektronik", "Giyim", "Gıda", "Mobilya", "Kitap",
+                       "Oyuncak", "Spor Malzemeleri", "Ev Aletleri", "Kozmetik", "Otomotiv"]
+    categories = {}
+    prices = {}
+    aging_thresholds = {}
+    for cat in categories_list:
+        result = await mcp.call_tool("list_products_by_category", {"category": cat})
+        if result.get("success"):
+            for item in result["data"]:
+                sku = item["sku"]
+                categories[sku] = item.get("category", "")
+                prices[sku] = item.get("price", 0.0)
+                aging_thresholds[sku] = item.get("aging_threshold_days", 180)
+    print(f"  {len(categories)} urun yuklendi (MCP)")
+    return categories, prices, aging_thresholds
+
+
+async def load_inventory_mcp(mcp: MCPManager, warehouse_ids: list) -> tuple:
+    stock = {}
+    entry_dates = {}
+    thresholds = {}
+    for wid in warehouse_ids:
+        result = await mcp.call_tool("get_warehouse_inventory", {"warehouse_id": wid})
+        if result.get("success"):
+            for item in result["data"]:
+                sku = item["sku"]
+                stock[(wid, sku)] = item.get("quantity", 0)
+                if item.get("received_date"):
+                    entry_dates[(wid, sku)] = item["received_date"]
+                if item.get("min_threshold"):
+                    thresholds[(wid, sku)] = item["min_threshold"]
+    print(f"  {len(stock)} stok kaydi yuklendi (MCP)")
+    return stock, entry_dates, thresholds
+
+
+async def load_sales_mcp(mcp: MCPManager, warehouse_ids: list, skus: list) -> dict:
+    """Satis gecmisi - MCP analytics server uzerinden."""
+    sales = defaultdict(lambda: defaultdict(float))
+    # Her SKU icin satis gecmisi cek (ilk 10 SKU ornegi, tam liste cok buyuk)
+    dynamodb = boto3.resource("dynamodb", region_name=REGION, verify=False)
+    table = dynamodb.Table("SalesHistory")
+    for wid in warehouse_ids:
+        resp = table.query(
+            KeyConditionExpression=Key("warehouse_id").eq(wid),
+            Limit=365,
+            ScanIndexForward=False,
+        )
+        for item in resp.get("Items", []):
+            item = _decimal_to_native(item)
+            sku = item.get("sku", "")
+            qty = item.get("quantity_sold", 0)
+            date_str = item.get("date", "")
+            if date_str and sku:
+                month_key = date_str[:7]
+                sales[(wid, sku)][month_key] += qty
+
+    result = {}
+    for (wid, sku), monthly in sales.items():
+        sorted_months = sorted(monthly.keys())[-12:]
+        result[(wid, sku)] = [monthly[m] for m in sorted_months]
+    print(f"  {len(result)} depo-SKU satis gecmisi yuklendi")
+    return result
+
+
+# ============================================================
+# Agent setup - MCP uzerinden veri yukleyerek
+# ============================================================
+
+async def setup_agents(mcp: MCPManager):
+    """Tum agentlari MCP uzerinden yuklenen veriyle baslatir."""
+    print("⏳ AWS'ye baglaniliyor...")
+    dynamodb = boto3.resource("dynamodb", region_name=REGION, verify=False)
+    bedrock = boto3.client("bedrock-runtime", region_name=REGION, verify=False)
+    s3 = boto3.client("s3", region_name=REGION, verify=False)
+
+    print("📦 Veriler MCP uzerinden yukleniyor...")
+    warehouses = await load_warehouses_mcp(mcp)
+    categories, prices, aging_thresholds = await load_products_mcp(mcp)
+    warehouse_ids = list(warehouses.keys())
+    skus = list(categories.keys())
+    stock, entry_dates, inv_thresholds = await load_inventory_mcp(mcp, warehouse_ids)
+    sales = await load_sales_mcp(mcp, warehouse_ids, skus)
+
+    print("🤖 Agentlar baslatiliyor...")
+    monitor = InventoryMonitorAgent(region_name=REGION, bedrock_runtime_client=bedrock, dynamodb_resource=dynamodb, s3_client=s3)
+    predictor = SalesPredictorAgent(region_name=REGION, bedrock_runtime_client=bedrock, dynamodb_resource=dynamodb, s3_client=s3)
+    aging = StockAgingAnalyzerAgent(region_name=REGION, bedrock_runtime_client=bedrock, dynamodb_resource=dynamodb, s3_client=s3)
+    coordinator = TransferCoordinatorAgent(region_name=REGION, bedrock_runtime_client=bedrock, dynamodb_resource=dynamodb, s3_client=s3)
     validator = StockValidator()
-
-    # Simülasyon verisi yükle
-    warehouses = {
-        "WH001": {"name": "İstanbul Merkez", "region": "Marmara"},
-        "WH002": {"name": "Ankara Depo", "region": "İç Anadolu"},
-        "WH003": {"name": "İzmir Depo", "region": "Ege"},
-        "WH004": {"name": "Antalya Depo", "region": "Akdeniz"},
-        "WH005": {"name": "Bursa Depo", "region": "Marmara"},
-        "WH006": {"name": "Trabzon Depo", "region": "Karadeniz"},
-    }
-    stock = {
-        ("WH001", "SKU001"): 5,   ("WH001", "SKU002"): 120, ("WH001", "SKU003"): 8,
-        ("WH002", "SKU001"): 200, ("WH002", "SKU002"): 15,  ("WH002", "SKU003"): 90,
-        ("WH003", "SKU001"): 150, ("WH003", "SKU002"): 60,  ("WH003", "SKU003"): 45,
-        ("WH004", "SKU001"): 80,  ("WH004", "SKU002"): 200, ("WH004", "SKU003"): 10,
-        ("WH005", "SKU001"): 30,  ("WH005", "SKU002"): 40,  ("WH005", "SKU003"): 300,
-        ("WH006", "SKU001"): 10,  ("WH006", "SKU002"): 25,  ("WH006", "SKU003"): 55,
-    }
-    categories = {"SKU001": "Elektronik", "SKU002": "Gıda", "SKU003": "Giyim"}
-    prices = {"SKU001": 1500.0, "SKU002": 25.0, "SKU003": 200.0}
-    sales = {
-        ("WH001", "SKU001"): [80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190],
-        ("WH002", "SKU001"): [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],
-        ("WH003", "SKU001"): [60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115],
-        ("WH001", "SKU002"): [200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310],
-        ("WH002", "SKU002"): [30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85],
-        ("WH004", "SKU002"): [150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260],
-    }
-    entry_dates = {
-        ("WH001", "SKU001"): "2025-10-01T00:00:00",
-        ("WH001", "SKU003"): "2025-08-15T00:00:00",
-        ("WH002", "SKU002"): "2026-01-20T00:00:00",
-        ("WH004", "SKU003"): "2025-06-01T00:00:00",
-        ("WH006", "SKU001"): "2025-11-01T00:00:00",
-    }
 
     for (wh, sku), qty in stock.items():
         monitor.update_stock(wh, sku, qty)
         coordinator.set_stock(wh, sku, qty)
+
+    for (wh, sku), threshold in inv_thresholds.items():
+        monitor.set_threshold(wh, sku, threshold)
+
     for wh_id, info in warehouses.items():
         predictor.set_warehouse_region(wh_id, info["region"])
+
     for sku, cat in categories.items():
         predictor.set_product_category(sku, cat)
         aging.set_product_category(sku, cat)
+
     for sku, price in prices.items():
         coordinator.set_product_price(sku, price)
+
     for (wh, sku), history in sales.items():
         predictor.set_sales_history(wh, sku, history)
+
     for (wh, sku), date in entry_dates.items():
         aging.set_entry_date(wh, sku, date)
 
     config = ApprovalConfig(high_value_threshold=10000.0, mode=OperationMode.SUPERVISED)
     coordinator.set_approval_config(config)
+
+    print(f"✅ {len(warehouses)} depo, {len(skus)} SKU, {len(stock)} stok kaydi hazir")
 
     return {
         "monitor": monitor,
@@ -100,63 +281,50 @@ def setup_agents():
         "warehouses": warehouses,
         "categories": categories,
         "bedrock": bedrock,
+        "mcp": mcp,
     }
 
 
-SYSTEM_PROMPT = """Sen bir Çok-Agentlı Depo Stok Yönetim Sistemi'nin ana koordinatör agentısın.
-Kullanıcıyla Türkçe konuş. Sana sorulan sorulara göre uygun agent'ı çağır ve sonuçları raporla.
+# ============================================================
+# Orchestrator - Bedrock + MCP tool calling
+# ============================================================
+
+SYSTEM_PROMPT = """Sen bir Cok-Agentli Depo Stok Yonetim Sistemi'nin ana koordinator agentisin.
+Kullaniciyla Turkce konus. Sana sorulan sorulara gore uygun agent'i cagir ve sonuclari raporla.
 
 Elindeki agentlar:
-1. Inventory Monitor Agent - Stok seviyelerini izler, kritik stokları tespit eder
-2. Sales Predictor Agent - Satış potansiyeli hesaplar, tahmin yapar
-3. Stock Aging Analyzer Agent - Ürün yaşlandırmasını analiz eder
-4. Transfer Coordinator Agent - Depolar arası transfer koordine eder
+1. Inventory Monitor Agent - Stok seviyelerini izler, kritik stoklari tespit eder
+2. Sales Predictor Agent - Satis potansiyeli hesaplar, tahmin yapar
+3. Stock Aging Analyzer Agent - Urun yaslindirmasini analiz eder
+4. Transfer Coordinator Agent - Depolar arasi transfer koordine eder
 
-Mevcut depolar: WH001 (İstanbul), WH002 (Ankara), WH003 (İzmir), WH004 (Antalya), WH005 (Bursa), WH006 (Trabzon)
-Mevcut SKU'lar: SKU001 (Elektronik), SKU002 (Gıda), SKU003 (Giyim)
+Kullanicinin sorusuna gore hangi agent'in ne yapmasi gerektigini belirle ve sonuclari acikla.
+Kisa ve oz yanitlar ver. Verileri tablo formatinda goster.
+Kullanici "kritik stoklari goster" dediginde SADECE kritik stok listesini goster, transfer onerisi ekleme.
+Transfer onerisi ancak kullanici acikca istediginde yapilmali.
 
-ÖNCELİKLİ KURAL - MUTLAKA UYULMALI:
-- Kullanıcı selamlama yapıyorsa (merhaba, selam, hey, nasılsın vb.) SADECE kısa bir selamlama yap. Stok raporu, transfer önerisi, uyarı veya herhangi bir analiz YAPMA. Örnek yanıt: "Merhaba! Size nasıl yardımcı olabilirim?"
-- Kullanıcı ne istediğini açıkça belirtmedikçe HİÇBİR rapor, analiz veya transfer önerisi YAPMA.
-- SADECE kullanıcının sorduğu soruya cevap ver. Fazlasını YAPMA.
+ONEMLI KURALLAR:
+1. Kullanici sadece "oner" gibi sorular sordugunda SADECE oneri yap, [EXECUTE_TRANSFER] komutu EKLEME.
+2. Kullanici acikca "transfer et", "uygula", "yap" gibi eylem kelimeleri kullandiginda [EXECUTE_TRANSFER] komutlarini ekle.
+3. Transfer onerirken kaynak depodaki stok miktarini MUTLAKA kontrol et.
+4. Onay bekleyen transferleri onaylamak icin [EXECUTE_TRANSFER] KULLANMA.
 
-TRANSFER KURALLARI:
-1. [EXECUTE_TRANSFER] komutu SADECE kullanıcı açıkça "transfer et", "uygula", "yap", "gerçekleştir" gibi eylem kelimeleri kullandığında eklenebilir.
-2. "Öner", "ne önerirsin" gibi sorularda SADECE öneri yap, [EXECUTE_TRANSFER] komutu EKLEME.
-3. Kaynak depo transfer sonrası 40 birimin altına düşmemeli. Güvenli fazlalık = mevcut stok - 40.
-4. Hiçbir depodan tam miktar karşılanamıyorsa, max miktarı öner ve eksik kalan için "Dış tedarik gerekli: X adet" notu ekle.
-5. Onay bekleyen transferler için [EXECUTE_TRANSFER] KULLANMA. Kullanıcıya "onayla <id>" komutunu söyle.
-6. SADECE kritik stok uyarısı olan depo/SKU çiftleri için transfer öner.
-7. Kaynak depo seçerken satış potansiyelini dikkate al. Az satan depodan çok satan depoya transfer öncelikli.
-8. Transfer komutu formatı: [EXECUTE_TRANSFER: kaynak_depo hedef_depo sku miktar] - Örnek: [EXECUTE_TRANSFER: WH002 WH001 SKU001 35]
-9. Kritik stokları göster dendiğinde SADECE kritik stok listesini göster, transfer önerisi ekleme."""
+Transfer komutu formati (SADECE kullanici acikca istediginde):
+[EXECUTE_TRANSFER: kaynak_depo hedef_depo sku miktar]"""
 
 
-def build_context(agents: dict) -> str:
-    """Mevcut sistem durumunu context olarak hazırlar."""
+def build_context(agents):
     monitor = agents["monitor"]
     coordinator = agents["coordinator"]
-    predictor = agents["predictor"]
 
-    lines = ["Mevcut Stok Durumu:"]
-    for item in sorted(monitor.get_all_inventory(), key=lambda x: (x.warehouse_id, x.sku)):
-        lines.append(f"  {item.warehouse_id}/{item.sku}: {item.quantity}")
-
+    lines = ["Mevcut Stok Durumu (ozet):"]
     alerts = monitor.detect_critical_stock(default_threshold=40)
     if alerts:
-        lines.append(f"\nKritik Stok Uyarıları ({len(alerts)} adet):")
-        for a in alerts:
-            lines.append(f"  ⚠️ {a.warehouse_id}/{a.sku}: {a.current_quantity} (eşik: {a.threshold}, şiddet: {a.severity.value})")
-
-    # Satış potansiyeli bilgisi (AI'ın doğru kaynak depo seçmesi için)
-    all_warehouses = list(agents["warehouses"].keys())
-    all_skus = list(agents["categories"].keys())
-    lines.append("\nSatış Potansiyeli (günlük tahmini satış):")
-    for sku in sorted(all_skus):
-        for wh_id in sorted(all_warehouses):
-            p = predictor.calculate_sales_potential(wh_id, sku)
-            if p.predicted_daily_sales > 0:
-                lines.append(f"  {wh_id}/{sku}: günlük={p.predicted_daily_sales}, skor={p.sales_potential_score}")
+        lines.append(f"\nKritik Stok Uyarilari ({len(alerts)} adet):")
+        for a in sorted(alerts, key=lambda x: x.current_quantity):
+            lines.append(f"  ⚠️ {a.warehouse_id}/{a.sku}: {a.current_quantity} (esik: {a.threshold}, siddet: {a.severity.value})")
+    else:
+        lines.append("  Kritik stok uyarisi yok.")
 
     transfers = coordinator.get_all_transfers()
     if transfers:
@@ -175,20 +343,13 @@ def build_context(agents: dict) -> str:
     return "\n".join(lines)
 
 
-def chat_with_orchestrator(user_message: str, agents: dict, history: list) -> str:
-    """Kullanıcı mesajını orchestrator agent'a gönderir."""
+async def chat_with_orchestrator(user_message, agents, history):
     bedrock = agents["bedrock"]
-
-    # Selamlama kontrolü - AI'a sistem durumu gönderme
-    greetings = ["merhaba", "selam", "hey", "hello", "hi", "günaydın", "iyi günler", "iyi akşamlar", "nasılsın", "naber"]
-    if user_message.strip().lower() in greetings:
-        return "Merhaba! Ben Depo Stok Yönetim Sistemi asistanıyım. Size nasıl yardımcı olabilirim?\n\nÖrnek komutlar: kritik stokları göster, transfer öner, satış potansiyeli analizi yap"
-
+    mcp = agents["mcp"]
     context = build_context(agents)
 
-    # Önceki konuşma geçmişini ekle
     messages = []
-    for msg in history[-6:]:  # Son 6 mesaj
+    for msg in history[-6:]:
         messages.append(msg)
 
     messages.append({
@@ -204,315 +365,270 @@ def chat_with_orchestrator(user_message: str, agents: dict, history: list) -> st
             body=json.dumps({
                 "system": [{"text": SYSTEM_PROMPT}],
                 "messages": messages,
-                "inferenceConfig": {"max_new_tokens": 1500, "temperature": 0.4},
+                "inferenceConfig": {"max_new_tokens": 1500, "temperature": 0.7},
             }),
         )
         result = json.loads(response["body"].read())
         reply = result.get("output", {}).get("message", {}).get("content", [{}])[0].get("text", "")
+        reply, executed = await execute_transfers_from_reply(reply, agents)
 
-        # Kullanıcı sadece öneri istiyorsa, AI yanlışlıkla EXECUTE_TRANSFER eklemiş olabilir - sil
-        import re
-        suggest_keywords = ["öner", "tavsiye", "ne dersin", "ne önerirsin", "öneri"]
-        execute_keywords = ["uygula", "transfer et", "yap", "gerçekleştir", "çalıştır", "execute"]
-        msg_lower = user_message.strip().lower()
-        is_suggestion = any(k in msg_lower for k in suggest_keywords)
-        is_execution = any(k in msg_lower for k in execute_keywords)
-
-        if is_suggestion and not is_execution:
-            # Öneri modunda - EXECUTE_TRANSFER komutlarını sil, çalıştırma
-            reply = re.sub(r'\[EXECUTE_TRANSFER:[^\]]*\]', '', reply, flags=re.IGNORECASE).strip()
-            reply = re.sub(r'\n{3,}', '\n\n', reply)
-        else:
-            # AI yanıtından transfer komutlarını çıkar ve çalıştır
-            reply, executed = execute_transfers_from_reply(reply, agents)
+        # Transfer yapildiysa MCP uzerinden de logla
+        if executed:
+            for t in executed:
+                await mcp.call_tool("log_decision", {
+                    "agent_name": "orchestrator",
+                    "decision_type": "ai_transfer",
+                    "input_data": {"source": t.source_warehouse_id, "target": t.target_warehouse_id, "sku": t.sku, "quantity": t.quantity},
+                    "output_data": {"status": t.status.value, "transfer_id": t.transfer_id},
+                    "reasoning": "AI orchestrator tarafindan baslatilan transfer"
+                })
 
         return reply
     except Exception as e:
         return f"Hata: {e}"
 
 
-def execute_transfers_from_reply(reply: str, agents: dict) -> tuple[str, list]:
-    """AI yanıtındaki [EXECUTE_TRANSFER: ...] komutlarını parse edip gerçekten çalıştırır."""
-    import re
+async def verify_db_stock_after_transfer(mcp: MCPManager, src: str, tgt: str, sku: str,
+                                         expected_src: int, expected_tgt: int) -> str:
+    """Transfer sonrasi DynamoDB'deki gercek stoklari MCP uzerinden okuyup dogrular."""
+    try:
+        src_result = await mcp.call_tool("get_inventory", {"warehouse_id": src, "sku": sku})
+        tgt_result = await mcp.call_tool("get_inventory", {"warehouse_id": tgt, "sku": sku})
 
-    # Tüm EXECUTE_TRANSFER komutlarını bul (esnek regex - boşluk, satır sonu vb. tolere eder)
-    generic_pattern = r'\[EXECUTE_TRANSFER:\s*([^\]]+)\]'
-    raw_matches = re.findall(generic_pattern, reply, re.IGNORECASE)
+        db_src = src_result.get("data", {}).get("quantity", "?") if src_result.get("success") else "?"
+        db_tgt = tgt_result.get("data", {}).get("quantity", "?") if tgt_result.get("success") else "?"
 
-    if not raw_matches:
+        src_ok = db_src == expected_src
+        tgt_ok = db_tgt == expected_tgt
+
+        if src_ok and tgt_ok:
+            return f"[DB ✅ {src}:{db_src} {tgt}:{db_tgt}]"
+        else:
+            parts = []
+            if not src_ok:
+                parts.append(f"{src}: DB={db_src} beklenen={expected_src}")
+            if not tgt_ok:
+                parts.append(f"{tgt}: DB={db_tgt} beklenen={expected_tgt}")
+            return f"[DB ⚠️ UYUMSUZ: {', '.join(parts)}]"
+    except Exception as e:
+        return f"[DB kontrol hatasi: {e}]"
+
+
+async def execute_transfers_from_reply(reply, agents):
+    """AI yanitindaki [EXECUTE_TRANSFER: ...] komutlarini parse edip calistirir.
+    Transfer sonuclarini MCP uzerinden de DynamoDB'ye yazar."""
+    pattern = r'\[EXECUTE_TRANSFER:\s*(WH\d+)\s+(WH\d+)\s+(SKU\d+)\s+(\d+)\]'
+    matches = re.findall(pattern, reply)
+
+    if not matches:
         return reply, []
 
-    parsed = []
-    for raw in raw_matches:
-        tokens = raw.strip().split()
-        if len(tokens) < 4:
-            continue
-        # Token'ları WH ve SKU olarak ayır
-        wh_tokens = [t for t in tokens if t.upper().startswith("WH")]
-        sku_tokens = [t for t in tokens if t.upper().startswith("SKU")]
-        qty_tokens = [t for t in tokens if t.isdigit()]
-
-        if len(wh_tokens) >= 2 and len(sku_tokens) >= 1 and len(qty_tokens) >= 1:
-            # İlk WH = kaynak, ikinci WH = hedef (AI formatından bağımsız)
-            src = wh_tokens[0]
-            tgt = wh_tokens[1]
-            sku = sku_tokens[0]
-            qty = qty_tokens[0]
-            parsed.append((src, tgt, sku, qty))
-
-    if not parsed:
-        return reply, []
-
-    # Komut satırlarını yanıttan temizle
-    clean_reply = re.sub(r'\[EXECUTE_TRANSFER:[^\]]*\]', '', reply, flags=re.IGNORECASE).strip()
+    mcp = agents["mcp"]
+    clean_reply = re.sub(r'\[EXECUTE_TRANSFER:.*?\]', '', reply).strip()
     clean_reply = re.sub(r'\n{3,}', '\n\n', clean_reply)
 
-    SAFETY_THRESHOLD = 40  # Kaynak depo bu seviyenin altına düşmemeli
-
+    SAFETY_THRESHOLD = 40
     executed = []
     transfer_results = []
-    external_supply_needed = []
-    actual_affected_warehouses = set()  # Gerçekten etkilenen depolar
 
-    # Her SKU için satış potansiyel skorlarını hesapla (düşük satış = öncelikli kaynak)
-    all_warehouses = list(agents["warehouses"].keys())
-    sales_scores_cache: dict[str, dict[str, float]] = {}
-
-    for src, tgt, sku, qty_str in parsed:
-        if sku not in sales_scores_cache:
-            scores = {}
-            for wh_id in all_warehouses:
-                prediction = agents["predictor"].calculate_sales_potential(wh_id, sku)
-                scores[wh_id] = prediction.sales_potential_score
-            sales_scores_cache[sku] = scores
-
-    for src, tgt, sku, qty_str in parsed:
+    for src, tgt, sku, qty_str in matches:
         qty = int(qty_str)
-        sales_scores = sales_scores_cache.get(sku, {})
-
-        # Güvenli transfer miktarını hesapla (kaynak depo eşik altına düşmesin)
         safe_qty = agents["coordinator"].get_safe_transfer_amount(src, sku, qty, SAFETY_THRESHOLD)
 
         if safe_qty == 0:
-            # Bu kaynaktan hiç güvenli transfer yapılamaz, alternatif ara
-            alt_src = agents["coordinator"].select_source_warehouse(sku, tgt, qty, SAFETY_THRESHOLD, sales_scores)
-            if alt_src and alt_src != src:
-                alt_safe_qty = agents["coordinator"].get_safe_transfer_amount(alt_src, sku, qty, SAFETY_THRESHOLD)
-                if alt_safe_qty >= qty:
-                    transfer_results.append(f"  🔄 {src} güvenli seviyede, alternatif {alt_src} kullanılıyor")
-                    src = alt_src
-                    safe_qty = qty
-                elif alt_safe_qty > 0:
-                    transfer_results.append(f"  🔄 {src} güvenli seviyede, alternatif {alt_src} kısmi transfer x{alt_safe_qty}")
-                    src = alt_src
-                    safe_qty = alt_safe_qty
-                else:
-                    external_supply_needed.append((tgt, sku, qty))
-                    transfer_results.append(f"  ❌ {sku} x{qty} → {tgt}: Hiçbir depoda güvenli fazlalık yok")
-                    continue
-            else:
-                external_supply_needed.append((tgt, sku, qty))
-                transfer_results.append(f"  ❌ {sku} x{qty} → {tgt}: Hiçbir depoda güvenli fazlalık yok")
-                continue
+            transfer_results.append(f"  ❌ {sku} x{qty} → {tgt}: Kaynak depoda guvenli fazlalik yok")
+            continue
         elif safe_qty < qty:
-            # Kısmi transfer + eksik kalan için dış tedarik
-            remaining = qty - safe_qty
-            transfer_results.append(f"  🔄 {src} → {tgt}: {sku} güvenli max x{safe_qty} (istenen: {qty})")
-            external_supply_needed.append((tgt, sku, remaining))
+            transfer_results.append(f"  🔄 {src} → {tgt}: {sku} kismi x{safe_qty} (istenen: {qty})")
             qty = safe_qty
 
         try:
+            # In-memory agent transfer
             t = agents["coordinator"].execute_transfer(src, tgt, sku, qty, reason="ai_orchestrated")
-            # Monitor'daki stokları da güncelle
             agents["monitor"].update_stock(src, sku, agents["coordinator"].get_stock(src, sku))
             agents["monitor"].update_stock(tgt, sku, agents["coordinator"].get_stock(tgt, sku))
-            actual_affected_warehouses.add(src)
-            actual_affected_warehouses.add(tgt)
+
+            # MCP uzerinden DynamoDB'ye yaz - sadece completed ise
+            # awaiting_approval ise DB'ye yazma (onay sonrasi yazilacak)
+            mcp_status = "onay_bekliyor"
+            db_check = ""
+            if t.status.value == "completed":
+                mcp_result = await mcp.call_tool("execute_transfer", {
+                    "source_warehouse_id": src,
+                    "target_warehouse_id": tgt,
+                    "sku": sku,
+                    "quantity": qty,
+                    "reason": "ai_orchestrated"
+                })
+                mcp_status = "mcp_ok" if mcp_result.get("success") else "mcp_fail"
+
+                # DB stok dogrulama
+                db_check = await verify_db_stock_after_transfer(mcp, src, tgt, sku,
+                    agents["coordinator"].get_stock(src, sku),
+                    agents["coordinator"].get_stock(tgt, sku))
+
             status_icon = "✅" if t.status.value == "completed" else "⏳" if t.status.value == "awaiting_approval" else "❌"
-            transfer_results.append(f"  {status_icon} {src} → {tgt}: {sku} x{qty} ({t.status.value})")
+            transfer_results.append(f"  {status_icon} {src} → {tgt}: {sku} x{qty} ({t.status.value}) [{mcp_status}] {db_check}")
             executed.append(t)
         except Exception as e:
             transfer_results.append(f"  ❌ {src} → {tgt}: {sku} x{qty} — Hata: {e}")
 
     if transfer_results:
-        clean_reply += "\n\n🚚 **Gerçekleştirilen Transferler:**\n" + "\n".join(transfer_results)
-
-        # Güncel stok özeti ekle
-        clean_reply += "\n\n📦 **Güncel Stok (etkilenen depolar):**"
-        for wh in sorted(actual_affected_warehouses):
-            items = agents["monitor"].get_warehouse_inventory(wh)
-            for item in sorted(items, key=lambda x: x.sku):
-                clean_reply += f"\n  {wh}/{item.sku}: {item.quantity}"
-
-    if external_supply_needed:
-        clean_reply += "\n\n📋 **Dış Tedarik Gerekli:**"
-        for tgt, sku, remaining in external_supply_needed:
-            clean_reply += f"\n  📦 {tgt}/{sku}: {remaining} adet dışarıdan temin edilmeli"
+        clean_reply += "\n\n🚚 **Gerceklestirilen Transferler:**\n" + "\n".join(transfer_results)
 
     return clean_reply, executed
 
 
-def handle_command(cmd: str, agents: dict) -> str:
-    """Doğrudan agent komutlarını çalıştırır."""
+# ============================================================
+# Komut isleyiciler
+# ============================================================
+
+async def handle_command(cmd, agents):
+    """Sadece sistem komutlari - geri kalan her sey AI'a gider."""
     parts = cmd.strip().split()
     if not parts:
         return ""
 
     action = parts[0].lower()
+    mcp = agents["mcp"]
 
-    if action == "stok":
-        monitor = agents["monitor"]
-        lines = ["📦 Stok Durumu:"]
-        for item in sorted(monitor.get_all_inventory(), key=lambda x: (x.warehouse_id, x.sku)):
-            lines.append(f"  {item.warehouse_id}/{item.sku}: {item.quantity}")
+    if action == "mcp":
+        tools = mcp.list_tools()
+        lines = [f"🔧 MCP Tools ({len(tools)} adet):"]
+        by_server = defaultdict(list)
+        for name, info in tools.items():
+            by_server[info["server"]].append(f"  {name}: {info['description']}")
+        for server, tool_lines in by_server.items():
+            lines.append(f"\n[{server}]")
+            lines.extend(tool_lines)
         return "\n".join(lines)
 
-    elif action == "uyarılar" or action == "uyarilar":
-        alerts = agents["monitor"].detect_critical_stock(default_threshold=40)
-        if not alerts:
-            return "✅ Kritik stok uyarısı yok."
-        lines = [f"⚠️ {len(alerts)} Kritik Stok Uyarısı:"]
-        for a in alerts:
-            lines.append(f"  {a.warehouse_id}/{a.sku}: {a.current_quantity} < {a.threshold} ({a.severity.value})")
-        return "\n".join(lines)
+    elif action == "mcptest" and len(parts) >= 2:
+        tool_name = parts[1]
+        args = {}
+        if len(parts) >= 3:
+            try:
+                args = json.loads(" ".join(parts[2:]))
+            except json.JSONDecodeError:
+                return "❌ JSON parse hatasi. Ornek: mcptest get_warehouse_info {\"warehouse_id\":\"WH001\"}"
+        result = await mcp.call_tool(tool_name, args)
+        return json.dumps(result, indent=2, ensure_ascii=False)[:2000]
 
-    elif action == "yaşlandırma" or action == "yaslandirma":
-        report = agents["aging"].get_daily_aging_report(reference_date="2026-02-12T00:00:00")
-        lines = [f"📅 Yaşlandırma Raporu:"]
-        lines.append(f"  Takip edilen: {report['total_tracked_items']}")
-        lines.append(f"  Kritik: {report['critical_items_count']}")
-        for item in report.get("urgent_transfers_needed", []):
-            lines.append(f"  🕐 {item['warehouse_id']}/{item['sku']}: {item['days_in_warehouse']} gün (eşik: {item['aging_threshold_days']})")
-        return "\n".join(lines)
+    return None
 
-    elif action == "transfer" and len(parts) >= 5:
-        # transfer WH002 WH001 SKU001 30
-        src, tgt, sku, qty = parts[1], parts[2], parts[3], int(parts[4])
-        try:
-            t = agents["coordinator"].execute_transfer(src, tgt, sku, qty, reason="manual")
-            agents["monitor"].update_stock(src, sku, agents["coordinator"].get_stock(src, sku))
-            agents["monitor"].update_stock(tgt, sku, agents["coordinator"].get_stock(tgt, sku))
-            return f"✅ Transfer: {src} -> {tgt}: {sku} x{qty} ({t.status.value})"
-        except Exception as e:
-            return f"❌ Transfer hatası: {e}"
 
-    elif action == "potansiyel" and len(parts) >= 2:
-        sku = parts[1]
-        wh_ids = list(agents["warehouses"].keys())
-        ranked = agents["predictor"].rank_warehouses_by_potential(sku, wh_ids)
-        lines = [f"📈 {sku} Satış Potansiyeli:"]
-        for p in ranked:
-            name = agents["warehouses"].get(p.warehouse_id, {}).get("name", "?")
-            lines.append(f"  {p.warehouse_id} ({name}): skor={p.sales_potential_score}, günlük={p.predicted_daily_sales}")
-        return "\n".join(lines)
+# ============================================================
+# S3 log flush - agent kararlarini S3'e yazar
+# ============================================================
 
-    elif action == "onay":
-        pending = agents["coordinator"].get_pending_approvals()
-        if not pending:
-            return "✅ Onay bekleyen transfer yok."
-        lines = [f"⏳ {len(pending)} Onay Bekleyen Transfer:"]
-        for t in pending:
-            lines.append(f"  [{t.transfer_id[:8]}] {t.source_warehouse_id} -> {t.target_warehouse_id}: {t.sku} x{t.quantity}")
-        lines.append("\nOnaylamak için: onayla <transfer_id_ilk_8_karakter>")
-        return "\n".join(lines)
+async def flush_agent_logs_to_s3(agents):
+    """Agent kararlarini S3 agent-logs/ altina yazar."""
+    for name in ["monitor", "predictor", "aging", "coordinator"]:
+        agent = agents[name]
+        if agent._decisions:
+            log_data = {
+                "agent": agent.agent_name,
+                "decisions_count": len(agent._decisions),
+                "decisions": [
+                    {
+                        "decision_id": d.decision_id,
+                        "type": d.decision_type,
+                        "reasoning": d.reasoning,
+                        "timestamp": d.timestamp,
+                    }
+                    for d in agent._decisions[-20:]  # son 20
+                ]
+            }
+            agent.log_to_s3(log_data, prefix="session-")
 
-    elif action == "onayla" and len(parts) >= 2:
-        tid_prefix = parts[1]
-        pending = agents["coordinator"].get_pending_approvals()
-        match = [t for t in pending if t.transfer_id.startswith(tid_prefix)]
-        if not match:
-            return f"❌ Transfer bulunamadı: {tid_prefix}"
-        try:
-            t = agents["coordinator"].approve_transfer(match[0].transfer_id)
-            agents["monitor"].update_stock(t.source_warehouse_id, t.sku, agents["coordinator"].get_stock(t.source_warehouse_id, t.sku))
-            agents["monitor"].update_stock(t.target_warehouse_id, t.sku, agents["coordinator"].get_stock(t.target_warehouse_id, t.sku))
-            return f"✅ Onaylandı: {t.source_warehouse_id} -> {t.target_warehouse_id}: {t.sku} x{t.quantity}"
-        except Exception as e:
-            return f"❌ Onay hatası: {e}"
 
-    return None  # Komut değil, AI'a gönder
-
+# ============================================================
+# Main
+# ============================================================
 
 HELP_TEXT = """
 ╔══════════════════════════════════════════════════════════╗
-║  🏭 Depo Stok Yönetim Sistemi - Komutlar               ║
+║  🏭 Depo Stok Yonetim Sistemi - MCP + AI Agent         ║
 ╠══════════════════════════════════════════════════════════╣
+║  Turkce yaz, AI agent yanitlar ve islem yapar.          ║
 ║                                                          ║
-║  Hızlı Komutlar:                                         ║
-║    stok              - Tüm stok durumunu göster          ║
-║    uyarılar          - Kritik stok uyarılarını göster    ║
-║    yaşlandırma       - Yaşlandırma raporunu göster       ║
-║    potansiyel SKU001 - SKU satış potansiyelini göster    ║
-║    onay              - Onay bekleyen transferleri göster  ║
-║    onayla <id>       - Bir transferi onayla              ║
-║    transfer WH002 WH001 SKU001 30 - Manuel transfer      ║
-║                                                          ║
-║  Serbest Sohbet:                                         ║
-║    Herhangi bir soruyu Türkçe yaz, AI agent yanıtlar.    ║
-║    Örnek: "WH001'deki stok durumu nasıl?"                ║
-║    Örnek: "SKU001 için en iyi depo hangisi?"             ║
-║    Örnek: "Yaşlanan ürünler için ne önerirsin?"          ║
-║                                                          ║
-║  yardım / help  - Bu menüyü göster                       ║
-║  çıkış / exit   - Çıkış                                  ║
+║  mcp               - MCP tool listesini goster          ║
+║  mcptest <tool> {} - MCP tool'u dogrudan test et        ║
+║  yardim / help     - Bu menuyu goster                    ║
+║  cikis / exit      - Cikis                               ║
 ╚══════════════════════════════════════════════════════════╝
 """
 
 
-def main():
-    print("🏭 Depo Stok Yönetim Sistemi - İnteraktif Chat")
+async def main():
+    print("🏭 Depo Stok Yonetim Sistemi - MCP Entegrasyonlu")
     print("=" * 58)
 
-    # Credential kontrolü
-    if not os.environ.get("AWS_ACCESS_KEY_ID"):
-        print("❌ AWS credential'ları ayarlanmamış.")
-        print("Önce creds.txt'deki değerleri export et:")
-        print('  export AWS_DEFAULT_REGION="us-west-2"')
-        print('  export AWS_ACCESS_KEY_ID="..."')
-        print('  export AWS_SECRET_ACCESS_KEY="..."')
-        print('  export AWS_SESSION_TOKEN="..."')
+    mcp = MCPManager()
+    try:
+        print("🔌 MCP server'lar baslatiliyor...")
+        await mcp.start()
+
+        tools = mcp.list_tools()
+        print(f"   {len(tools)} MCP tool hazir")
+
+        agents = await setup_agents(mcp)
+    except Exception as e:
+        print(f"❌ Baslatma hatasi: {e}")
+        import traceback
+        traceback.print_exc()
+        await mcp.stop()
         sys.exit(1)
 
-    print("⏳ Agentlar başlatılıyor...")
-    agents = setup_agents()
-    print("✅ Agentlar hazır!")
     print(HELP_TEXT)
-
     history = []
 
-    while True:
+    try:
+        while True:
+            try:
+                user_input = input("\n🧑 Sen: ").strip()
+            except (EOFError, KeyboardInterrupt):
+                print("\n👋 Gorusuruz!")
+                break
+
+            if not user_input:
+                continue
+
+            if user_input.lower() in ("çıkış", "cikis", "exit", "quit", "q"):
+                print("👋 Gorusuruz!")
+                break
+
+            if user_input.lower() in ("yardım", "yardim", "help", "h"):
+                print(HELP_TEXT)
+                continue
+
+            cmd_result = await handle_command(user_input, agents)
+            if cmd_result is not None:
+                print(f"\n🤖 Agent: {cmd_result}")
+                continue
+
+            print("🤖 Agent: dusunuyorum...")
+            reply = await chat_with_orchestrator(user_input, agents, history)
+            print(f"\n🤖 Agent: {reply}")
+
+            history.append({"role": "user", "content": [{"text": user_input}]})
+            history.append({"role": "assistant", "content": [{"text": reply}]})
+
+    finally:
+        print("\n📝 Agent loglari S3'e yaziliyor...")
         try:
-            user_input = input("\n🧑 Sen: ").strip()
-        except (EOFError, KeyboardInterrupt):
-            print("\n👋 Görüşürüz!")
-            break
+            await flush_agent_logs_to_s3(agents)
+            print("✅ Loglar S3'e yazildi")
+        except Exception as e:
+            print(f"⚠️ S3 log hatasi: {e}")
 
-        if not user_input:
-            continue
-
-        if user_input.lower() in ("çıkış", "cikis", "exit", "quit", "q"):
-            print("👋 Görüşürüz!")
-            break
-
-        if user_input.lower() in ("yardım", "yardim", "help", "h"):
-            print(HELP_TEXT)
-            continue
-
-        # Önce hızlı komut mu kontrol et
-        cmd_result = handle_command(user_input, agents)
-        if cmd_result is not None:
-            print(f"\n🤖 Agent: {cmd_result}")
-            continue
-
-        # AI orchestrator'a gönder
-        print("🤖 Agent: düşünüyorum...")
-        reply = chat_with_orchestrator(user_input, agents, history)
-        print(f"\n🤖 Agent: {reply}")
-
-        # Geçmişe ekle
-        history.append({"role": "user", "content": [{"text": user_input}]})
-        history.append({"role": "assistant", "content": [{"text": reply}]})
+        print("🔌 MCP server'lar kapatiliyor...")
+        try:
+            await mcp.stop()
+        except Exception:
+            pass
+        print("✅ Temiz cikis")
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

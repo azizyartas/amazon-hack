@@ -13,6 +13,7 @@ import json
 import os
 import sys
 
+import env_loader
 import boto3
 
 # Region'ı creds'ten al

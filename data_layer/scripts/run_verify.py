@@ -1,16 +1,8 @@
-"""Verify runner - credential'lari environment'tan okur."""
+"""Verify runner - credential'lari .env'den okur."""
 import os
-
-# AWS credentials should be set via environment variables or AWS CLI profile
-# Do NOT hardcode credentials here
-# Export them in your shell before running:
-#   export AWS_DEFAULT_REGION=us-west-2
-#   export AWS_ACCESS_KEY_ID=your-key
-#   export AWS_SECRET_ACCESS_KEY=your-secret
-#   export AWS_SESSION_TOKEN=your-token
-
-if not os.environ.get("AWS_DEFAULT_REGION"):
-    os.environ["AWS_DEFAULT_REGION"] = "us-west-2"
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
+import env_loader
 
 import sys
 sys.path.insert(0, ".")

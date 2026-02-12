@@ -109,6 +109,20 @@ class BaseAgent(ABC):
         except ClientError as e:
             logger.warning("Karar loglama hatası: %s", e)
 
+        # S3'e de logla
+        try:
+            self.log_to_s3({
+                "decision_id": decision.decision_id,
+                "agent_name": decision.agent_name,
+                "decision_type": decision_type,
+                "input_data": input_data,
+                "output_data": output_data,
+                "reasoning": reasoning,
+                "timestamp": decision.timestamp,
+            }, prefix=f"{decision_type}-")
+        except Exception as e:
+            logger.warning("S3 karar log hatası: %s", e)
+
         return decision
 
     def log_to_s3(self, log_data: dict, prefix: str = "") -> None:
@@ -116,8 +130,13 @@ class BaseAgent(ABC):
         timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H-%M-%S")
         key = f"agent-logs/{self.agent_name.lower().replace(' ', '-')}/{prefix}{timestamp}.json"
         try:
+            # Bucket adini dinamik al
+            if not hasattr(self, '_s3_bucket_name') or not self._s3_bucket_name:
+                sts = boto3.client("sts", region_name=self.region_name, verify=False)
+                account_id = sts.get_caller_identity()["Account"]
+                self._s3_bucket_name = f"warehouse-stock-mgmt-{account_id}"
             self.s3.put_object(
-                Bucket="warehouse-stock-management",
+                Bucket=self._s3_bucket_name,
                 Key=key,
                 Body=json.dumps(log_data, default=str),
             )

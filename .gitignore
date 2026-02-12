@@ -1,6 +1,7 @@
 # Credentials
 creds.txt
 
+
 # Python
 __pycache__/
 *.py[cod]
@@ -16,7 +17,7 @@ build/
 # Virtual environments
 .venv/
 venv/
-env/
+
 
 # IDE
 .vscode/
