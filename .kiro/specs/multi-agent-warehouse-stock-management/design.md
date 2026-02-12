@@ -1405,3 +1405,356 @@ jobs:
 3. **Repository Kurulumu**: GitHub repo oluşturun, branch stratejisi belirleyin
 4. **AWS Hesap Hazırlığı**: Gerekli AWS servislerine erişim sağlayın
 5. **Sprint Planning**: İlk 2 haftalık sprint'i planlayın
+
+## MCP_PLACEHOLDER_START
+
+### Genel Bakış
+
+MCP (Model Context Protocol), Bedrock agentları ile veri katmanı (DynamoDB/S3) arasında standartlaştırılmış bir iletişim katmanı sağlar. Bu mimari, agent'ların veri kaynaklarına erişimini merkezileştirir, kod tekrarını önler ve test edilebilirliği artırır.
+
+### MCP Sunucu Mimarisi
+
+```
+Bedrock Agents
+    ↓
+MCP Servers (Standardized Tool Interface)
+    ↓
+AWS Services (DynamoDB, S3)
+```
+
+Sistem 3 özel MCP sunucusu kullanır:
+
+1. **Warehouse Data MCP Server** (`warehouse_data_server.py`)
+2. **Transfer Operations MCP Server** (`transfer_ops_server.py`)
+3. **Analytics MCP Server** (`analytics_server.py`)
+
+### 1. Warehouse Data MCP Server
+
+**Amaç**: Depo, envanter ve ürün verilerine erişim sağlar.
+
+**Sağladığı Araçlar**:
+- `get_inventory`: Belirli bir depo ve SKU için mevcut stok seviyesini getir
+- `get_warehouse_info`: Depo bilgilerini (kapasite, konum) getir
+- `list_low_stock_items`: Minimum eşiğin altındaki tüm ürünleri listele
+- `get_product_info`: Ürün bilgilerini (kategori, yaşlandırma eşiği) getir
+- `get_threshold`: Bir depo ve SKU için minimum stok eşiğini getir
+- `set_threshold`: Bir depo ve SKU için minimum stok eşiğini ayarla
+- `get_regional_data`: Belirli bir bölgedeki tüm depoları getir
+- `get_products_by_category`: Belirli bir kategorideki tüm ürünleri getir
+- `validate_transfer`: Transfer işleminin mümkün olup olmadığını doğrula
+- `get_warehouse_capacity`: Depo kapasite kullanımını getir
+
+**Eriştiği DynamoDB Tabloları**:
+- Warehouses
+- Inventory
+- Products
+
+**Kullanım Örneği**:
+```python
+# Inventory Monitor Agent kullanımı
+inventory_data = mcp_client.call_tool(
+    server="warehouse-data",
+    tool="get_inventory",
+    arguments={"warehouse_id": "WH001", "sku": "SKU001"}
+)
+```
+
+### 2. Transfer Operations MCP Server
+
+**Amaç**: Transfer işlemlerini yönetir, onay süreçlerini koordine eder ve agent kararlarını loglar.
+
+**Sağladığı Araçlar**:
+- `execute_transfer`: Depolar arası atomik stok transferi gerçekleştir
+- `get_transfer_history`: Bir depo veya SKU için transfer geçmişini getir
+- `get_transfer_status`: Belirli bir transferin durumunu getir
+- `create_approval_request`: İnsan onayı için transfer talebi oluştur
+- `approve_transfer`: Bekleyen bir transfer talebini onayla
+- `reject_transfer`: Bekleyen bir transfer talebini reddet
+- `log_decision`: Agent kararını denetim kaydına logla
+- `get_agent_decisions`: Bir agent için karar geçmişini getir
+- `rollback_transfer`: Tamamlanmış bir transferi geri al (acil durum)
+
+**Eriştiği DynamoDB Tabloları**:
+- Transfers
+- ApprovalQueue
+- AgentDecisions
+- Inventory (atomik işlemler için)
+
+**Atomik Transfer İşlemi**:
+```python
+# DynamoDB Transactions kullanarak atomik transfer
+response = dynamodb_client.transact_write_items(
+    TransactItems=[
+        {'Update': {...}},  # Kaynak depodan düş
+        {'Update': {...}},  # Hedef depoya ekle
+        {'Put': {...}}      # Transfer kaydını oluştur
+    ]
+)
+```
+
+**Kullanım Örneği**:
+```python
+# Transfer Coordinator Agent kullanımı
+transfer_result = mcp_client.call_tool(
+    server="transfer-ops",
+    tool="execute_transfer",
+    arguments={
+        "source_warehouse_id": "WH002",
+        "target_warehouse_id": "WH001",
+        "sku": "SKU001",
+        "quantity": 15,
+        "reason": "Low stock at target warehouse"
+    }
+)
+```
+
+### 3. Analytics MCP Server
+
+**Amaç**: Satış geçmişi analizi, yaşlandırma hesaplamaları ve tahmine dayalı analizler sağlar.
+
+**Sağladığı Araçlar**:
+- `get_sales_history`: Bir SKU ve depo için geçmiş satış verilerini getir
+- `calculate_sales_potential`: Bir depo ve SKU için satış potansiyeli skorunu hesapla
+- `get_aging_data`: Bir depo ve SKU için ürün yaşlandırma bilgilerini getir
+- `get_category_threshold`: Bir ürün kategorisi için yaşlandırma eşiğini getir
+- `prioritize_aged_stock`: Yaşlandırma ciddiyetine göre önceliklendirilmiş yaşlı stok listesi
+- `predict_demand`: Geçmiş verilere dayalı gelecek talep tahmini
+- `get_regional_sales_multiplier`: Bir bölge için satış çarpanını getir
+- `calculate_transfer_priority`: Birden fazla faktöre dayalı transfer öncelik skoru hesapla
+- `get_seasonal_multiplier`: Bir kategori ve ay için mevsimsel satış çarpanını getir
+
+**Eriştiği Veri Kaynakları**:
+- S3 (sales-history bucket)
+- DynamoDB (Products, Inventory, Warehouses)
+
+**Kullanım Örneği**:
+```python
+# Sales Predictor Agent kullanımı
+sales_potential = mcp_client.call_tool(
+    server="analytics",
+    tool="calculate_sales_potential",
+    arguments={"sku": "SKU001", "warehouse_id": "WH001"}
+)
+```
+
+### Agent-MCP Araç Eşleştirmesi
+
+#### Inventory Monitor Agent
+**İhtiyaç Duyduğu Araçlar**:
+- `warehouse-data.get_inventory`
+- `warehouse-data.get_threshold`
+- `warehouse-data.list_low_stock_items`
+- `transfer-ops.log_decision`
+
+#### Transfer Coordinator Agent
+**İhtiyaç Duyduğu Araçlar**:
+- `warehouse-data.get_inventory`
+- `warehouse-data.validate_transfer`
+- `transfer-ops.execute_transfer`
+- `transfer-ops.create_approval_request`
+- `analytics.get_warehouse_capacity`
+- `analytics.calculate_transfer_priority`
+
+#### Sales Predictor Agent
+**İhtiyaç Duyduğu Araçlar**:
+- `analytics.get_sales_history`
+- `analytics.calculate_sales_potential`
+- `analytics.predict_demand`
+- `warehouse-data.get_regional_data`
+- `analytics.get_regional_sales_multiplier`
+- `analytics.get_seasonal_multiplier`
+
+#### Stock Aging Analyzer Agent
+**İhtiyaç Duyduğu Araçlar**:
+- `analytics.get_aging_data`
+- `analytics.get_category_threshold`
+- `analytics.prioritize_aged_stock`
+- `warehouse-data.get_products_by_category`
+- `transfer-ops.log_decision`
+
+### MCP Mimarisinin Avantajları
+
+1. **Merkezileştirilmiş Veri Erişimi**: Tüm veri erişim mantığı MCP sunucularında toplanır, agent kodunda tekrar önlenir.
+
+2. **Standartlaştırılmış Arayüz**: Tüm agentlar aynı araç arayüzünü kullanır, tutarlılık sağlar.
+
+3. **Kolay Test Edilebilirlik**: MCP sunucuları mock'lanabilir, unit testleri basitleştirir.
+   ```python
+   @given(warehouse_id=st.text(), sku=st.text(), quantity=st.integers(0, 1000))
+   def test_property_1_low_stock_detection(warehouse_id, sku, quantity):
+       with mock_mcp_server("warehouse-data") as mock:
+           mock.set_response("get_inventory", {"quantity": quantity})
+           agent = InventoryMonitorAgent(mcp_client=mock.client)
+           alerts = agent.detect_critical_stock(threshold=20)
+           if quantity < 20:
+               assert len(alerts) > 0
+   ```
+
+4. **Güvenlik Katmanı**: MCP sunucuları erişim kontrolü uygulayabilir, hassas işlemleri korur.
+
+5. **Hata Yönetimi**: Merkezi hata yönetimi ve retry mekanizmaları.
+
+6. **Agent İletişimi**: MCP sunucuları agent'lar arası iletişim katmanı olarak görev yapabilir.
+
+### MCP Konfigürasyonu
+
+MCP sunucuları `.kiro/settings/mcp.json` dosyasında yapılandırılır:
+
+```json
+{
+  "mcpServers": {
+    "warehouse-data": {
+      "command": "python",
+      "args": ["-m", "mcp.warehouse_data_server"],
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": false,
+      "autoApprove": ["get_inventory", "get_warehouse_info", "get_product_info"]
+    },
+    "transfer-ops": {
+      "command": "python",
+      "args": ["-m", "mcp.transfer_ops_server"],
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": false,
+      "autoApprove": ["get_transfer_history", "get_transfer_status"]
+    },
+    "analytics": {
+      "command": "python",
+      "args": ["-m", "mcp.analytics_server"],
+      "env": {
+        "AWS_REGION": "us-east-1",
+        "AWS_PROFILE": "default"
+      },
+      "disabled": false,
+      "autoApprove": ["get_sales_history", "calculate_sales_potential"]
+    }
+  }
+}
+```
+
+### Bedrock Agent Entegrasyonu
+
+Bedrock agentları MCP araçlarını action groups aracılığıyla çağırır:
+
+```python
+def inventory_monitor_action_group(event):
+    """Inventory Monitor Agent için action group"""
+    
+    # Agent input'unu parse et
+    action = event['actionGroup']
+    function = event['function']
+    parameters = event.get('parameters', [])
+    
+    # MCP aracını çağır
+    if function == "check_low_stock":
+        warehouse_id = get_parameter(parameters, 'warehouse_id')
+        
+        result = mcp_client.call_tool(
+            server="warehouse-data",
+            tool="list_low_stock_items",
+            arguments={"warehouse_id": warehouse_id}
+        )
+        
+        # Agent'a yanıt dön
+        return {
+            "response": {
+                "actionGroup": action,
+                "function": function,
+                "functionResponse": {
+                    "responseBody": {
+                        "TEXT": {
+                            "body": json.dumps(result)
+                        }
+                    }
+                }
+            }
+        }
+```
+
+### Özellik Testleri için MCP Kullanımı
+
+MCP mimarisi, 32 doğruluk özelliğinin test edilmesini kolaylaştırır:
+
+**Özellik 6 Örneği (Stok Korunumu)**:
+```python
+@given(
+    source_wh=warehouse_strategy,
+    target_wh=warehouse_strategy,
+    sku=sku_strategy,
+    quantity=st.integers(1, 100)
+)
+def test_property_6_stock_conservation(source_wh, target_wh, sku, quantity):
+    """Transfer öncesi ve sonrası toplam sistem stok miktarı aynı kalmalıdır"""
+    
+    # Transfer öncesi toplam stok
+    total_before = get_total_stock_via_mcp(sku)
+    
+    # Transfer gerçekleştir
+    mcp_client.call_tool(
+        server="transfer-ops",
+        tool="execute_transfer",
+        arguments={
+            "source_warehouse_id": source_wh.id,
+            "target_warehouse_id": target_wh.id,
+            "sku": sku.id,
+            "quantity": quantity
+        }
+    )
+    
+    # Transfer sonrası toplam stok
+    total_after = get_total_stock_via_mcp(sku)
+    
+    # Stok korunumu doğrulaması
+    assert total_before == total_after
+```
+
+### Performans Optimizasyonu
+
+1. **Caching**: Sık erişilen veriler için MCP sunucularında cache mekanizması
+2. **Batch Operations**: Birden fazla sorgu için batch araçları
+3. **Connection Pooling**: DynamoDB ve S3 bağlantıları için connection pool
+4. **Async Operations**: Uzun süren işlemler için asenkron araçlar
+
+### Güvenlik ve Erişim Kontrolü
+
+MCP sunucuları şu güvenlik önlemlerini uygular:
+
+1. **IAM Rolleri**: Her MCP sunucusu minimum gerekli izinlerle çalışır
+2. **Validasyon**: Tüm girdiler sunucu tarafında doğrulanır
+3. **Rate Limiting**: Aşırı kullanımı önlemek için rate limiting
+4. **Audit Logging**: Tüm araç çağrıları loglanır
+5. **Encryption**: Hassas veriler şifrelenir
+
+### Monitoring ve Debugging
+
+MCP sunucuları CloudWatch'a metrik ve log gönderir:
+
+```python
+# Her araç çağrısı için metrik
+cloudwatch.put_metric_data(
+    Namespace='MCP/WarehouseData',
+    MetricData=[
+        {
+            'MetricName': 'ToolInvocation',
+            'Value': 1,
+            'Unit': 'Count',
+            'Dimensions': [
+                {'Name': 'ToolName', 'Value': tool_name},
+                {'Name': 'Success', 'Value': str(success)}
+            ]
+        }
+    ]
+)
+```
+
+### Gelecek Geliştirmeler
+
+1. **GraphQL API**: MCP sunucuları üzerinden GraphQL endpoint'leri
+2. **WebSocket Support**: Gerçek zamanlı veri güncellemeleri için
+3. **Multi-Region**: Çoklu bölge desteği için MCP sunucu replikasyonu
+4. **Advanced Analytics**: Makine öğrenimi modelleri için özel MCP sunucusu
